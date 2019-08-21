@@ -137,6 +137,36 @@ Param: country         Default:    Choices:  ,AUS,ARG,CA,CHI,DEU,FR,HK,IND,IRE,J
 Param: limit           Default: 20
 ```
 
+`Meetings List` Payload Format
+```go
+type meetingPayload struct {
+	Meetings []*meetingData `json:"meetings" xml:"meetings"`
+}
+
+type meetingData struct {
+	Meeting      string         `json:"meeting" xml:"meeting"`
+	Name         string         `json:"name" xml:"name"`
+	Date         time.Time      `json:"date" xml:"date"`
+	Category     string         `json:"category" xml:"category"`
+	CategoryName string         `json:"category_name" xml:"category_name"`
+	Country      string         `json:"country" xml:"country"`
+	State        string         `json:"state" xml:"state"`
+	Races        []*meetingRace `json:"races" xml:"races"`
+}
+
+type meetingRace struct {
+	ID             string    `json:"id" xml:"id"`
+	RaceNumber     uint32    `json:"race_number" xml:"race_number"`
+	Name           string    `json:"name" xml:"name"`
+	StartTime      time.Time `json:"start_time" xml:"start_time"`
+	TrackCondition string    `json:"track_condition,omitempty" xml:"track_condition"`
+	Distance       uint32    `json:"distance" xml:"distance"`
+	Weather        string    `json:"weather,omitempty" xml:"weather"`
+	Country        string    `json:"country,omitempty" xml:"country"`
+	State          string    `json:"state,omitempty" xml:"state"`
+}
+```
+
 ### Racing `BASE_URL`/meetings/`MEETING-ID`
 
 - `JSON` https://api-affiliates.ladbrokes.com.au/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b
@@ -154,6 +184,38 @@ Param: country         Default:    Choices:  ,AUS,ARG,CA,CHI,DEU,FR,HK,IND,IRE,J
 Param: limit           Default: 20
 ```
 
+`Meeting Details` Payload Format
+```go
+// Still presented as an array as per the Meeting List payload
+// but there will be only 1 element in this array
+type meetingPayload struct {
+	Meetings []*meetingData `json:"meetings" xml:"meetings"`
+}
+
+type meetingData struct {
+	Meeting      string         `json:"meeting" xml:"meeting"`
+	Name         string         `json:"name" xml:"name"`
+	Date         time.Time      `json:"date" xml:"date"`
+	Category     string         `json:"category" xml:"category"`
+	CategoryName string         `json:"category_name" xml:"category_name"`
+	Country      string         `json:"country" xml:"country"`
+	State        string         `json:"state" xml:"state"`
+	Races        []*meetingRace `json:"races" xml:"races"`
+}
+
+type meetingRace struct {
+	ID             string    `json:"id" xml:"id"`
+	RaceNumber     uint32    `json:"race_number" xml:"race_number"`
+	Name           string    `json:"name" xml:"name"`
+	StartTime      time.Time `json:"start_time" xml:"start_time"`
+	TrackCondition string    `json:"track_condition,omitempty" xml:"track_condition"`
+	Distance       uint32    `json:"distance" xml:"distance"`
+	Weather        string    `json:"weather,omitempty" xml:"weather"`
+	Country        string    `json:"country,omitempty" xml:"country"`
+	State          string    `json:"state,omitempty" xml:"state"`
+}
+```
+
 ### Racing `BASE_URL`/events/`EVENT-ID`
 
 - `JSON` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
@@ -161,7 +223,7 @@ Param: limit           Default: 20
 - `HTML` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.html
 
 Parameters
-```cassandraql
+```
 Param: enc             Default: json  Choices: json,xml,html
 Param: id              
 Param: limit           Default: 100
@@ -172,9 +234,113 @@ Param: from_date
 Param: to_date         
 ```
 
+Event Payload Format
+```go
+type eventRace struct {
+	EventID               string `json:"event_id,omitempty"`
+	MeetingName           string `json:"meeting_name,omitempty"`
+	MeetingID             string `json:"meeting_id,omitempty"`
+	Status                string `json:"status,omitempty"`
+	Description           string `json:"description,omitempty"`
+	AdvertisedStart       int64  `json:"advertised_start,omitempty"`
+	ActualStart           int64  `json:"actual_start,omitempty"`
+	AdvertisedStartString string `json:"advertised_start_string"`
+	ActualStartString     string `json:"actual_start_string"`
+	RaceNumber            uint32 `json:"race_number,omitempty"`
+	Type                  string `json:"type,omitempty"`
+	Country               string `json:"country,omitempty"`
+	State                 string `json:"state,omitempty"`
+	Distance              uint32 `json:"distance,omitempty"`
+	Weather               string `json:"weather,omitempty"`
+	FormGuide             string `json:"form_guide,omitempty"`
+	Comment               string `json:"comment,omitempty"`
+	SilkBaseURL           string `json:"silk_base_url,omitempty"`
+	TrackCondition        string `json:"track_condition,omitempty"`
+}
+
+type eventEntrant struct {
+	EntrantID    string `json:"-"`
+	Horse        string `json:"horse,omitempty"`
+	IsScratched  bool   `json:"is_scratched,omitempty"`
+	ScratchTime  int64  `json:"scratch_time,omitempty"`
+	Barrier      uint32 `json:"barrier,omitempty"`
+	RunnerNumber int    `json:"runner_number,omitempty"`
+	PrizeMoney   string `json:"prize_money,omitempty"`
+	Age          int    `json:"age,omitempty"`
+	Sex          string `json:"sex,omitempty"`
+	Colour       string `json:"colour,omitempty"`
+	SilkColours  string `json:"silk_colours,omitempty"`
+	FormComment  string `json:"form_comment,omitempty"`
+	ClassLevel   string `json:"class_level,omitempty"`
+	Jockey       string `json:"jockey,omitempty"`
+	Country      string `json:"country,omitempty"`
+	TrainerName  string `json:"trainer_name,omitempty"`
+	Weight       struct {
+		Allocated string `json:"allocated,omitempty"`
+		Total     string `json:"total,omitempty"`
+	} `json:"weight"`
+	Favourite bool `json:"favourite,omitempty"`
+	Mover     bool `json:"mover,omitempty"`
+}
+
+type formAdditionalData struct {
+	RunnerNumber int    `json:"runnerNumber,omitempty"`
+	RunnerName   string `json:"runnerName,omitempty"`
+	PrizeMoney   string `json:"prizeMoney,omitempty"`
+	Last20Starts string `json:"last20Starts,omitempty"`
+	Sire         struct {
+		Name string `json:"name,omitempty"`
+		Text string `json:"Text,omitempty"`
+	} `json:"sire,omitempty"`
+	Dam struct {
+		Name string `json:"name,omitempty"`
+		Text string `json:"Text,omitempty"`
+	} `json:"dam"`
+	SireOfDam struct {
+		Name    string `json:"name,omitempty"`
+		Country string `json:"country,omitempty"`
+		Text    string `json:"Text,omitempty"`
+	} `json:"sire_of_dam"`
+	Age         int    `json:"age,omitempty"`
+	Sex         string `json:"sex,omitempty"`
+	Colour      string `json:"colour,omitempty"`
+	SilkColours string `json:"silk_colours,omitempty"`
+	FormComment string `json:"formComment,omitempty"`
+	ClassLevel  string `json:"classLevel,omitempty"`
+	Jockey      struct {
+		AllowanceWeight     string `json:"AllowanceWeight,omitempty"`
+		ApprenticeIndicator string `json:"ApprenticeIndicator,omitempty"`
+		Name                string `json:"Name,omitempty"`
+	} `json:"jockey"`
+	TrainerName string `json:"TrainerName,omitempty"`
+	Country     string `json:"country,omitempty"`
+	Weight      struct {
+		Allocated string `json:"allocated,omitempty"`
+		Total     string `json:"total,omitempty"`
+	} `json:"weight"`
+}
+
+type eventRunner struct {
+	eventEntrant
+	Meta               map[string]string `json:"meta,omitempty" xml:"-"`
+	Flucs              []float64         `json:"flucs,omitempty" xml:"-"`
+	Odds               odds              `json:"odds,omitempty"`
+	ScrTime            *time.Time        `json:"scr_time,omitempty"`
+	CompetitorID       string            `json:"competitor_id,omitempty"`
+	RideGuideExists    bool              `json:"ride_guide_exists"`
+	RideGuideThumbnail string            `json:"ride_guide_thumbnail,omitempty"`
+	RideGuideFile      string            `json:"ride_guide_file,omitempty"`
+	Trainer            string            `json:"trainer,omitempty"`
+}
+
+type odds struct {
+	FixedWin   float64 `json:"fixed_win"`
+	FixedPlace float64 `json:"fixed_place"`
+}
+```
 # Sports API
 
-WorkInProgress here.
+Work In Progress here.
 
 The following denotes the proposed API to be delivered. This is mostly a mirror of the Racing API, with 
 the additional split by competitions, and slightly different search parameters.
