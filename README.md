@@ -443,6 +443,7 @@ Other items that are under review, include :
 - BetNow functionality
 
 For other requests, please use the github issues to raise an issue, or email requests direct to 
-<steven.oconnor@neds.com>
+
+steven.oconnor@neds.com
 
 Thank You
