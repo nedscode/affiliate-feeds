@@ -6,7 +6,7 @@
 [Meeting Details](README.md#racing-base_urlmeetingsmeeting-id) | 
 [Event Details](README.md#racing-base_urleventsevent-id) 
 
-[Sports API](README.md#sports-apis) ->
+[Sports API](README.md#sports-api) ->
 [Competitions List](README.md#sports-base_urlcompetitions) | 
 [Competitions Details](README.md#sports-base_urlcompetitionscompetition-id) | 
 [Events List](README.md#sports-base_urlevents) |
