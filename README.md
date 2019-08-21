@@ -443,6 +443,6 @@ Other items that are under review, include :
 - BetNow functionality
 
 For other requests, please use the github issues to raise an issue, or email requests direct to 
-<steven.oconnor@ladbrokes.com.au>
+<steven.oconnor@neds.com>
 
 Thank You
