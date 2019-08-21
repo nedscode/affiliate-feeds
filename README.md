@@ -3,9 +3,9 @@
 ### Status 21 AUG 2019
 - [x] Overview of the structure of the new API
 - [x] Overview of working endpoints in new API
+- [x] Details of Racing API
 
 TODO
-- [ ] Details of Racing API
 - [ ] Details of Sports API
 - [ ] Details of Racing Resulting
 - [ ] Details of Sports Resulting
@@ -111,6 +111,47 @@ This is useful, as it can be applied to Index URLs where adding a `.html` is not
 - `PARAMETER HELP` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4?enc=help
 
 ---
+
+# Input Parameter Formats
+
+Parameters are parsed as presented.
+
+Special treatment of parameters includes :
+
+### `id` fields must be valid UUIDv4 IDs
+
+Conforms to UUID v4 (randomly generated)
+
+as per RFC 4122
+https://www.ietf.org/rfc/rfc4122.txt
+
+Useful tool for validating UUIDv4 can be found here
+https://www.uuidgenerator.net/version4
+
+### Date Fields
+
+Includes parameters labelled `date_from` and `date_to`.
+ 
+Dates accept strings in the format `YYYY-MM-DD` as well as a selection of keywords :
+
+- `now`  for the current date and time.
+- `today`  for the start of the current day.
+- `week` for the start of the current week (where Monday is the first day of the week)
+- `month` for the start of the current month.
+- `all` In the context of `date_from` = all dates.  In the context of `date_to` = current date.
+
+### Parameters with Choice sets
+
+If the parameter has a `Choices` set (as displayed in the HELP for that API endpoint), then 
+the input data must be a member of that set.
+
+ie :
+
+```
+Param: category        Default:    Choices: T,H,G, 
+```
+
+Then the `?category=VALUE`  must be one of T,H,G for the request to be accepted.
 
 
 # Racing APIs
