@@ -126,17 +126,51 @@ Summary of API endpoints for racing
 - `HTML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=html
 - `XML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=xml
 
+Parameters
+```cassandraql
+Param: enc             Default: json  Choices: json,xml,html
+Param: id              
+Param: date_from       Default: week
+Param: date_to         Default: now
+Param: category        Default:    Choices: T,H,G, 
+Param: country         Default:    Choices:  ,AUS,ARG,CA,CHI,DEU,FR,HK,IND,IRE,JPN,KOR,NOR,NZ,PER,SAF,SGP,SWE,UK,URY,USA
+Param: limit           Default: 20
+```
+
 ### Racing `BASE_URL`/meetings/`MEETING-ID`
 
 - `JSON` https://api-affiliates.ladbrokes.com.au/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b
 - `XML` https://api-affiliates.ladbrokes.com.au/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b.xml
 - `HTML` https://api-affiliates.ladbrokes.com.au/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b.html
 
+Parameters
+```cassandraql
+Param: enc             Default: json  Choices: json,xml,html
+Param: id              
+Param: date_from       Default: week
+Param: date_to         Default: now
+Param: category        Default:    Choices: T,H,G, 
+Param: country         Default:    Choices:  ,AUS,ARG,CA,CHI,DEU,FR,HK,IND,IRE,JPN,KOR,NOR,NZ,PER,SAF,SGP,SWE,UK,URY,USA
+Param: limit           Default: 20
+```
+
 ### Racing `BASE_URL`/events/`EVENT-ID`
 
 - `JSON` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
 - `XML` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.xml
 - `HTML` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.html
+
+Parameters
+```cassandraql
+Param: enc             Default: json  Choices: json,xml,html
+Param: id              
+Param: limit           Default: 100
+Param: offset          Default: 0
+Param: country         Default:    Choices: AU, ,SAF,UK,NZ,IN,KR,JP
+Param: type            Default: T  Choices: T,H,G
+Param: from_date       
+Param: to_date         
+```
 
 # Sports API
 
