@@ -1,5 +1,20 @@
 # Documentation for Affiliate Feed services (public)
 
+### Quick Links
+[Racing API](#racing-apis) -> 
+[Meetings List](#racing-apis-base_urlmeetings) | 
+[Meeting Details](#racing-apis-base_urlmeetings-id) | 
+[Event Details](#racing-apis-base_urleventsevent-id) 
+
+[Sports API](#sports-apis) ->
+[Competitions List](#sports-apis-base_urlcompetitions) | 
+[Competitions Details](#sports-apis-base_urlcompetitions-id) | 
+[Events List](#sports-apis-base_urlevents) |
+[Event Details](#sports-apis-base_urleventsevent-id) 
+
+[Other TODO](#other-todo) 
+
+
 ### Status 21 AUG 2019
 - [x] Overview of the structure of the new API
 - [x] Overview of working endpoints in new API
@@ -381,7 +396,9 @@ type odds struct {
 ```
 # Sports API
 
-Work In Progress here.
+Work In Progress.
+ 
+Parameters and Result Payloads to be advised.
 
 The following denotes the proposed API to be delivered. This is mostly a mirror of the Racing API, with 
 the additional split by competitions, and slightly different search parameters.
@@ -391,13 +408,14 @@ The Links below are examples only, and will not work till the new Sport API is r
 Summary of API endpoints for sports
 - `BASE_URL`/competitions
 - `BASE_URL`/competitions/`COMPETITON-ID`
+- `BASE_URL`/events
 - `BASE_URL`/events/`EVENT-ID`
 
 ### Sports `BASE_URL`/competitions
 
 - `JSON` https://api-affiliates.ladbrokes.com.au/sports/competitions
-- `HTML` https://api-affiliates.ladbrokes.com.au/sports/competitions?enc=html
 - `XML` https://api-affiliates.ladbrokes.com.au/sports/competitions?enc=xml
+- `HTML` https://api-affiliates.ladbrokes.com.au/sports/competitions?enc=html
 
 ### Sports `BASE_URL`/competitions/`MEETING-ID`
 
@@ -405,9 +423,26 @@ Summary of API endpoints for sports
 - `XML` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b.xml
 - `HTML` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b.html
 
+### Sports `BASE_URL`/events
+
+- `JSON` https://api-affiliates.ladbrokes.com.au/sports/events
+- `HTML` https://api-affiliates.ladbrokes.com.au/sports/events?enc=xml
+- `XML` https://api-affiliates.ladbrokes.com.au/sports/events?enc=html
+
 ### Sports `BASE_URL`/events/`EVENT-ID`
 
 - `JSON` https://api-affiliates.ladbrokes.com.au/sports/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
 - `XML` https://api-affiliates.ladbrokes.com.au/sports/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.xml
 - `HTML` https://api-affiliates.ladbrokes.com.au/sports/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.html
 
+# Other TODO Items 
+
+Other items that are under review, include :
+
+- Resulting updates
+- BetNow functionality
+
+For other requests, please use the github issues to raise an issue, or email requests direct to 
+<steven.oconnor@ladbrokes.com.au>
+
+Thank You
