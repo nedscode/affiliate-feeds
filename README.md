@@ -101,11 +101,14 @@ Optional - using the `enc` GET parameter to control output encoding format
 - `?enc=html`  Returns `HTML` format 
 - `?enc=json`  Returns `JSON` format
 - `?enc=xml` Returns `XML` format.  (not available on all endpoints)
+- `?enc=help` Returns a short description of the available parameters. (Debugging aide)
 
 This is useful, as it can be applied to Index URLs where adding a `.html` is not applicable, such as 
 
 - `JSON` https://api-affiliates.ladbrokes.com.au/racing/meetings for a JSON data payload, vs
+- `XML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=xml for an XML data payload, vs
 - `HTML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=html for a human readable view of the same data
+- `PARAMETER HELP` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4?enc=help
 
 ---
 
