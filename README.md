@@ -2,17 +2,17 @@
 
 ### Quick Links
 [Racing API](README.md#racing-apis) -> 
-[Meetings List](README.md#racing-apis-base_urlmeetings) | 
-[Meeting Details](README.md#racing-apis-base_urlmeetings-id) | 
-[Event Details](README.md#racing-apis-base_urleventsevent-id) 
+[Meetings List](README.md#racing-base_urlmeetings) | 
+[Meeting Details](README.md#racing-base_urlmeetings-id) | 
+[Event Details](README.md#racing-base_urleventsevent-id) 
 
 [Sports API](README.md#sports-apis) ->
-[Competitions List](README.md#sports-apis-base_urlcompetitions) | 
-[Competitions Details](README.md#sports-apis-base_urlcompetitions-id) | 
-[Events List](README.md#sports-apis-base_urlevents) |
-[Event Details](README.md#sports-apis-base_urleventsevent-id) 
+[Competitions List](README.md#sports-base_urlcompetitions) | 
+[Competitions Details](README.md#sports-base_urlcompetitions-id) | 
+[Events List](README.md#sports-base_urlevents) |
+[Event Details](README.md#sports-base_urleventsevent-id) 
 
-[Other TODO](README.md#other-todo) 
+[Other TODO](README.md#other-todo-items) 
 
 
 ### Status 21 AUG 2019
