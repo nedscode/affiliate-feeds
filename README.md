@@ -155,6 +155,10 @@ Dates accept strings in the format `YYYY-MM-DD` as well as a selection of keywor
 - `month` for the start of the current month.
 - `all` In the context of `date_from` = all dates.  In the context of `date_to` = current date.
 
+Date ranges can be considered inclusive.
+
+So `date_from=today` includes events greater than or equal to 00:00:00 hrs of the current day.
+
 ### Parameters with Choice sets
 
 If the parameter has a `Choices` set (as displayed in the HELP for that API endpoint), then 
