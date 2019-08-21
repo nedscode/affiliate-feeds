@@ -3,12 +3,12 @@
 ### Quick Links
 [Racing API](README.md#racing-apis) -> 
 [Meetings List](README.md#racing-base_urlmeetings) | 
-[Meeting Details](README.md#racing-base_urlmeetings-id) | 
+[Meeting Details](README.md#racing-base_urlmeetingsmeetings-id) | 
 [Event Details](README.md#racing-base_urleventsevent-id) 
 
 [Sports API](README.md#sports-apis) ->
 [Competitions List](README.md#sports-base_urlcompetitions) | 
-[Competitions Details](README.md#sports-base_urlcompetitions-id) | 
+[Competitions Details](README.md#sports-base_urlcompetitionscompetition-id) | 
 [Events List](README.md#sports-base_urlevents) |
 [Event Details](README.md#sports-base_urleventsevent-id) 
 
