@@ -47,7 +47,7 @@ The base URL for each brand is as follows:
 
 In the document below, we will refer to this as `BASE_URL`
 
-The API provided on the `BASE_URL` uses `HTTP` protocol - so can be hit from a browser, curl script, or coded using
+The API provided on the `BASE_URL` uses `HTTPS` protocol - so can be hit from a browser, curl script, or coded using
 standard HTTP libs in your prefered development toolkit.
 
 Each API endpoint has a consistent range of `GET` parameters for controlling the returned data.
