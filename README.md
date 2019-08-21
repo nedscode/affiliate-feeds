@@ -1,18 +1,18 @@
 # Documentation for Affiliate Feed services (public)
 
 ### Quick Links
-[Racing API](#racing-apis) -> 
-[Meetings List](#racing-apis-base_urlmeetings) | 
-[Meeting Details](#racing-apis-base_urlmeetings-id) | 
-[Event Details](#racing-apis-base_urleventsevent-id) 
+[Racing API](README.md#racing-apis) -> 
+[Meetings List](README.md#racing-apis-base_urlmeetings) | 
+[Meeting Details](README.md#racing-apis-base_urlmeetings-id) | 
+[Event Details](README.md#racing-apis-base_urleventsevent-id) 
 
-[Sports API](#sports-apis) ->
-[Competitions List](#sports-apis-base_urlcompetitions) | 
-[Competitions Details](#sports-apis-base_urlcompetitions-id) | 
-[Events List](#sports-apis-base_urlevents) |
-[Event Details](#sports-apis-base_urleventsevent-id) 
+[Sports API](README.md#sports-apis) ->
+[Competitions List](README.md#sports-apis-base_urlcompetitions) | 
+[Competitions Details](README.md#sports-apis-base_urlcompetitions-id) | 
+[Events List](README.md#sports-apis-base_urlevents) |
+[Event Details](README.md#sports-apis-base_urleventsevent-id) 
 
-[Other TODO](#other-todo) 
+[Other TODO](README.md#other-todo) 
 
 
 ### Status 21 AUG 2019
