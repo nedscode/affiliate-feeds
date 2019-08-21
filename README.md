@@ -1,5 +1,16 @@
 # Documentation for Affiliate Feed services (public)
 
+### Status 21 AUG 2019
+- [x] Overview of the structure of the new API
+- [x] Overview of working endpoints in new API
+
+TODO
+- [ ] Details of Racing API
+- [ ] Details of Sports API
+- [ ] Details of Racing Resulting
+- [ ] Details of Sports Resulting
+- [ ] BetNow Functionality
+
 ## Scope
 
 This documentation is provided for external developers who need to write code to poll data from the provided 
@@ -50,7 +61,7 @@ and a listing of which parameters are accepted.
 
 - https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4 
 
-returns a `JSON` payload with the data for the given racing event.
+returns a JSON payload with the data for the given racing event.
 
 ---
 
@@ -66,15 +77,92 @@ returns an XML payload for the exact same data.
 
 - https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.html
 
+---
 
-### Racing
+Optional - using the `enc` GET parameter to control output encoding format
 
-#### 
-
-###
-
-### Optional - using the `enc` GET parameter to control output encoding format
-
-- `?enc=html`  Returns `HTML` format (DEFAULT)
-- `?enc=json`  Returns `JSON` format (Available for all data endpoints)
+- `?enc=html`  Returns `HTML` format 
+- `?enc=json`  Returns `JSON` format
 - `?enc=xml` Returns `XML` format.  (not available on all endpoints)
+
+This is useful, as it can be applied to Index URLs where adding a `.html` is not applicable, such as 
+
+- `JSON` https://api-affiliates.ladbrokes.com.au/racing/meetings for a JSON data payload, vs
+- `HTML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=html for a human readable view of the same data
+
+---
+
+# UUID format ID Fields
+
+Note that all ID fields across all APIs now use UUIDv4 notation.
+
+MeetingIDs / EventIDs are consistent across all brands, so they can be re-used across 
+different `BASE_URL`s to refer the exact same Meeting / Event / Entrant, from one brand to the next.
+
+eg
+
+- https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
+- https://api-affiliates.neds.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
+- https://api-affiliates.betstar.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
+- https://api-affiliates.bookmaker.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
+
+Are 4 different views of the same event, with the pricing data applicable to that brand only.
+
+
+# Racing APIs
+
+Summary of API endpoints for racing
+- `BASE_URL`/meetings
+- `BASE_URL`/meetings/`MEETING-ID`
+- `BASE_URL`/events/`EVENT-ID`
+
+### Racing `BASE_URL`/meetings
+
+- `JSON` https://api-affiliates.ladbrokes.com.au/racing/meetings
+- `HTML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=html
+- `XML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=xml
+
+### Racing `BASE_URL`/meetings/`MEETING-ID`
+
+- `JSON` https://api-affiliates.ladbrokes.com.au/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b
+- `XML` https://api-affiliates.ladbrokes.com.au/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b.xml
+- `HTML` https://api-affiliates.ladbrokes.com.au/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b.html
+
+### Racing `BASE_URL`/events/`EVENT-ID`
+
+- `JSON` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
+- `XML` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.xml
+- `HTML` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.html
+
+# Sports API
+
+WorkInProgress here.
+
+The following denotes the proposed API to be delivered. This is mostly a mirror of the Racing API, with 
+the additional split by competitions, and slightly different search parameters.
+
+The Links below are examples only, and will not work till the new Sport API is rolled out.
+
+Summary of API endpoints for sports
+- `BASE_URL`/competitions
+- `BASE_URL`/competitions/`COMPETITON-ID`
+- `BASE_URL`/events/`EVENT-ID`
+
+### Sports `BASE_URL`/competitions
+
+- `JSON` https://api-affiliates.ladbrokes.com.au/sports/competitions
+- `HTML` https://api-affiliates.ladbrokes.com.au/sports/competitions?enc=html
+- `XML` https://api-affiliates.ladbrokes.com.au/sports/competitions?enc=xml
+
+### Sports `BASE_URL`/competitions/`MEETING-ID`
+
+- `JSON` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b
+- `XML` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b.xml
+- `HTML` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b.html
+
+### Sports `BASE_URL`/events/`EVENT-ID`
+
+- `JSON` https://api-affiliates.ladbrokes.com.au/sports/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
+- `XML` https://api-affiliates.ladbrokes.com.au/sports/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.xml
+- `HTML` https://api-affiliates.ladbrokes.com.au/sports/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.html
+
