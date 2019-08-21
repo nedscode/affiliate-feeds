@@ -185,7 +185,6 @@ Summary of API endpoints for racing
 Parameters
 ```cassandraql
 Param: enc             Default: json  Choices: json,xml,html
-Param: id              
 Param: date_from       Default: week
 Param: date_to         Default: now
 Param: category        Default:    Choices: T,H,G, 
@@ -232,12 +231,6 @@ type meetingRace struct {
 Parameters
 ```cassandraql
 Param: enc             Default: json  Choices: json,xml,html
-Param: id              
-Param: date_from       Default: week
-Param: date_to         Default: now
-Param: category        Default:    Choices: T,H,G, 
-Param: country         Default:    Choices:  ,AUS,ARG,CA,CHI,DEU,FR,HK,IND,IRE,JPN,KOR,NOR,NZ,PER,SAF,SGP,SWE,UK,URY,USA
-Param: limit           Default: 20
 ```
 
 `Meeting Details` Payload Format
@@ -281,13 +274,6 @@ type meetingRace struct {
 Parameters
 ```
 Param: enc             Default: json  Choices: json,xml,html
-Param: id              
-Param: limit           Default: 100
-Param: offset          Default: 0
-Param: country         Default:    Choices: AU, ,SAF,UK,NZ,IN,KR,JP
-Param: type            Default: T  Choices: T,H,G
-Param: from_date       
-Param: to_date         
 ```
 
 Event Payload Format
@@ -417,11 +403,24 @@ Summary of API endpoints for sports
 - `XML` https://api-affiliates.ladbrokes.com.au/sports/competitions?enc=xml
 - `HTML` https://api-affiliates.ladbrokes.com.au/sports/competitions?enc=html
 
-### Sports `BASE_URL`/competitions/`MEETING-ID`
+Parameters
+```cassandraql
+Param: enc             Default: json  Choices: json,xml,html
+Param: date_from       Default: week
+Param: date_to         Default: now
+Param: limit           Default: 20
+```
+
+
+### Sports `BASE_URL`/competitions/`COMPETITION-ID`
 
 - `JSON` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b
 - `XML` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b.xml
 - `HTML` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b.html
+
+```cassandraql
+Param: enc             Default: json  Choices: json,xml,html
+```
 
 ### Sports `BASE_URL`/events
 
