@@ -37,6 +37,23 @@ standard HTTP libs in your prefered development toolkit.
 
 Each API endpoint has a consistent range of `GET` parameters for controlling the returned data.
 
+# UUID format ID Fields
+
+Note that all ID fields across all APIs now use UUIDv4 notation instead of simple integers that
+may have been used previously.
+
+MeetingIDs / EventIDs are consistent across all brands, so they can be re-used across 
+different `BASE_URL`s to refer the exact same Meeting / Event / Entrant, from one brand to the next.
+
+eg
+
+- https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
+- https://api-affiliates.neds.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
+- https://api-affiliates.betstar.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
+- https://api-affiliates.bookmaker.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
+
+Are 4 different views of the same event, with the pricing data applicable to that brand only.
+
 # Data vs Index API Endpoints
 
 There are 2 classes of API Endpoint provided.
@@ -91,22 +108,6 @@ This is useful, as it can be applied to Index URLs where adding a `.html` is not
 - `HTML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=html for a human readable view of the same data
 
 ---
-
-# UUID format ID Fields
-
-Note that all ID fields across all APIs now use UUIDv4 notation.
-
-MeetingIDs / EventIDs are consistent across all brands, so they can be re-used across 
-different `BASE_URL`s to refer the exact same Meeting / Event / Entrant, from one brand to the next.
-
-eg
-
-- https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
-- https://api-affiliates.neds.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
-- https://api-affiliates.betstar.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
-- https://api-affiliates.bookmaker.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
-
-Are 4 different views of the same event, with the pricing data applicable to that brand only.
 
 
 # Racing APIs
