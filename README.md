@@ -15,14 +15,17 @@
 [Other TODO](README.md#other-todo-items) 
 
 
-### Status 21 AUG 2019
+### Status 30 AUG 2019
+- [x] Added results to racing events
+- [x] Empty / blank fields included in all data payloads
+
 - [x] Overview of the structure of the new API
 - [x] Overview of working endpoints in new API
 - [x] Details of Racing API
 
 TODO
 - [ ] Details of Sports API
-- [ ] Details of Racing Resulting
+- [x] Details of Racing Resulting
 - [ ] Details of Sports Resulting
 - [ ] BetNow Functionality
 
@@ -218,11 +221,11 @@ type meetingRace struct {
 	RaceNumber     uint32    `json:"race_number" xml:"race_number"`
 	Name           string    `json:"name" xml:"name"`
 	StartTime      time.Time `json:"start_time" xml:"start_time"`
-	TrackCondition string    `json:"track_condition,omitempty" xml:"track_condition"`
+	TrackCondition string    `json:"track_condition" xml:"track_condition"`
 	Distance       uint32    `json:"distance" xml:"distance"`
-	Weather        string    `json:"weather,omitempty" xml:"weather"`
-	Country        string    `json:"country,omitempty" xml:"country"`
-	State          string    `json:"state,omitempty" xml:"state"`
+	Weather        string    `json:"weather" xml:"weather"`
+	Country        string    `json:"country" xml:"country"`
+	State          string    `json:"state" xml:"state"`
 }
 ```
 
@@ -261,11 +264,11 @@ type meetingRace struct {
 	RaceNumber     uint32    `json:"race_number" xml:"race_number"`
 	Name           string    `json:"name" xml:"name"`
 	StartTime      time.Time `json:"start_time" xml:"start_time"`
-	TrackCondition string    `json:"track_condition,omitempty" xml:"track_condition"`
+	TrackCondition string    `json:"track_condition" xml:"track_condition"`
 	Distance       uint32    `json:"distance" xml:"distance"`
-	Weather        string    `json:"weather,omitempty" xml:"weather"`
-	Country        string    `json:"country,omitempty" xml:"country"`
-	State          string    `json:"state,omitempty" xml:"state"`
+	Weather        string    `json:"weather" xml:"weather"`
+	Country        string    `json:"country" xml:"country"`
+	State          string    `json:"state" xml:"state"`
 }
 ```
 
@@ -280,103 +283,121 @@ Parameters
 Param: enc             Default: json  Choices: json,xml,html
 ```
 
+Note that Results are now added to the event details, as follows 
+
 Event Payload Format
 ```go
+type eventRaceDetails struct {
+	Race      eventRace      `json:"race"`
+	Results   []*eventResult `json:"results,omitempty"`
+	Favourite eventEntrant   `json:"favourite"`
+	Runners   []*eventRunner `json:"runners"`
+	Mover     eventEntrant   `json:"mover"`
+	Error     string         `json:"error"`
+}
+
 type eventRace struct {
-	EventID               string `json:"event_id,omitempty"`
-	MeetingName           string `json:"meeting_name,omitempty"`
-	MeetingID             string `json:"meeting_id,omitempty"`
-	Status                string `json:"status,omitempty"`
-	Description           string `json:"description,omitempty"`
-	AdvertisedStart       int64  `json:"advertised_start,omitempty"`
-	ActualStart           int64  `json:"actual_start,omitempty"`
+	EventID               string `json:"event_id"`
+	MeetingName           string `json:"meeting_name"`
+	MeetingID             string `json:"meeting_id"`
+	Status                string `json:"status"`
+	Description           string `json:"description"`
+	AdvertisedStart       int64  `json:"advertised_start"`
+	ActualStart           int64  `json:"actual_start"`
 	AdvertisedStartString string `json:"advertised_start_string"`
 	ActualStartString     string `json:"actual_start_string"`
-	RaceNumber            uint32 `json:"race_number,omitempty"`
-	Type                  string `json:"type,omitempty"`
-	Country               string `json:"country,omitempty"`
-	State                 string `json:"state,omitempty"`
-	Distance              uint32 `json:"distance,omitempty"`
-	Weather               string `json:"weather,omitempty"`
-	FormGuide             string `json:"form_guide,omitempty"`
-	Comment               string `json:"comment,omitempty"`
-	SilkBaseURL           string `json:"silk_base_url,omitempty"`
-	TrackCondition        string `json:"track_condition,omitempty"`
+	RaceNumber            uint32 `json:"race_number"`
+	Type                  string `json:"type"`
+	Country               string `json:"country"`
+	State                 string `json:"state"`
+	Distance              uint32 `json:"distance"`
+	Weather               string `json:"weather"`
+	FormGuide             string `json:"form_guide"`
+	Comment               string `json:"comment"`
+	SilkBaseURL           string `json:"silk_base_url"`
+	TrackCondition        string `json:"track_condition"`
+}
+
+type eventResult struct {
+	Position     uint32 `json:"position"`
+	Name         string `json:"name"`
+	Barrier      uint32 `json:"barrier"`
+	RunnerNumber uint32 `json:"runner_number"`
 }
 
 type eventEntrant struct {
 	EntrantID    string `json:"-"`
-	Horse        string `json:"horse,omitempty"`
-	IsScratched  bool   `json:"is_scratched,omitempty"`
-	ScratchTime  int64  `json:"scratch_time,omitempty"`
-	Barrier      uint32 `json:"barrier,omitempty"`
-	RunnerNumber int    `json:"runner_number,omitempty"`
-	PrizeMoney   string `json:"prize_money,omitempty"`
-	Age          int    `json:"age,omitempty"`
-	Sex          string `json:"sex,omitempty"`
-	Colour       string `json:"colour,omitempty"`
-	SilkColours  string `json:"silk_colours,omitempty"`
-	FormComment  string `json:"form_comment,omitempty"`
-	ClassLevel   string `json:"class_level,omitempty"`
-	Jockey       string `json:"jockey,omitempty"`
-	Country      string `json:"country,omitempty"`
-	TrainerName  string `json:"trainer_name,omitempty"`
+	Name         string `json:"name"`
+	IsScratched  bool   `json:"is_scratched"`
+	ScratchTime  int64  `json:"scratch_time"`
+	Barrier      uint32 `json:"barrier"`
+	RunnerNumber int    `json:"runner_number"`
+	PrizeMoney   string `json:"prize_money"`
+	Age          int    `json:"age"`
+	Sex          string `json:"sex"`
+	Colour       string `json:"colour"`
+	SilkColours  string `json:"silk_colours"`
+	FormComment  string `json:"form_comment"`
+	ClassLevel   string `json:"class_level"`
+	Jockey       string `json:"jockey"`
+	Country      string `json:"country"`
+	TrainerName  string `json:"trainer_name"`
 	Weight       struct {
-		Allocated string `json:"allocated,omitempty"`
-		Total     string `json:"total,omitempty"`
+		Allocated string `json:"allocated"`
+		Total     string `json:"total"`
 	} `json:"weight"`
-	Favourite bool `json:"favourite,omitempty"`
-	Mover     bool `json:"mover,omitempty"`
+	Favourite bool `json:"favourite"`
+	Mover     bool `json:"mover"`
 }
 
 type formAdditionalData struct {
-	RunnerNumber int    `json:"runnerNumber,omitempty"`
-	RunnerName   string `json:"runnerName,omitempty"`
-	PrizeMoney   string `json:"prizeMoney,omitempty"`
-	Last20Starts string `json:"last20Starts,omitempty"`
+	RunnerNumber int    `json:"runnerNumber"`
+	RunnerName   string `json:"runnerName"`
+	PrizeMoney   string `json:"prizeMoney"`
+	Last20Starts string `json:"last20Starts"`
 	Sire         struct {
-		Name string `json:"name,omitempty"`
-		Text string `json:"Text,omitempty"`
-	} `json:"sire,omitempty"`
+		Name string `json:"name"`
+		Text string `json:"Text"`
+	} `json:"sire"`
 	Dam struct {
-		Name string `json:"name,omitempty"`
-		Text string `json:"Text,omitempty"`
+		Name string `json:"name"`
+		Text string `json:"Text"`
 	} `json:"dam"`
 	SireOfDam struct {
-		Name    string `json:"name,omitempty"`
-		Country string `json:"country,omitempty"`
-		Text    string `json:"Text,omitempty"`
+		Name    string `json:"name"`
+		Country string `json:"country"`
+		Text    string `json:"Text"`
 	} `json:"sire_of_dam"`
-	Age         int    `json:"age,omitempty"`
-	Sex         string `json:"sex,omitempty"`
-	Colour      string `json:"colour,omitempty"`
-	SilkColours string `json:"silk_colours,omitempty"`
-	FormComment string `json:"formComment,omitempty"`
-	ClassLevel  string `json:"classLevel,omitempty"`
+	Age         int    `json:"age"`
+	Sex         string `json:"sex"`
+	Colour      string `json:"colour"`
+	SilkColours string `json:"silk_colours"`
+	FormComment string `json:"formComment"`
+	ClassLevel  string `json:"classLevel"`
 	Jockey      struct {
-		AllowanceWeight     string `json:"AllowanceWeight,omitempty"`
-		ApprenticeIndicator string `json:"ApprenticeIndicator,omitempty"`
-		Name                string `json:"Name,omitempty"`
+		AllowanceWeight     string `json:"AllowanceWeight"`
+		ApprenticeIndicator string `json:"ApprenticeIndicator"`
+		Name                string `json:"Name"`
 	} `json:"jockey"`
-	TrainerName string `json:"TrainerName,omitempty"`
-	Country     string `json:"country,omitempty"`
+	TrainerName string `json:"TrainerName"`
+	Country     string `json:"country"`
 	Weight      struct {
-		Allocated string `json:"allocated,omitempty"`
-		Total     string `json:"total,omitempty"`
+		Allocated string `json:"allocated"`
+		Total     string `json:"total"`
 	} `json:"weight"`
 }
 
 type eventRunner struct {
 	eventEntrant
-	Meta               map[string]string `json:"meta,omitempty" xml:"-"`
-	Flucs              []float64         `json:"flucs,omitempty" xml:"-"`
-	Odds               odds              `json:"odds,omitempty"`
-	ScrTime            *time.Time        `json:"scr_time,omitempty"`
-	CompetitorID       string            `json:"competitor_id,omitempty"`
+	Meta               map[string]string `json:"meta" xml:"-"`
+	Flucs              []float64         `json:"flucs" xml:"-"`
+	Odds               odds              `json:"odds"`
+	ScrTime            *time.Time        `json:"scr_time"`
+	CompetitorID       string            `json:"competitor_id"`
 	RideGuideExists    bool              `json:"ride_guide_exists"`
-	RideGuideThumbnail string            `json:"ride_guide_thumbnail,omitempty"`
-	RideGuideFile      string            `json:"ride_guide_file,omitempty"`
-	Trainer            string            `json:"trainer,omitempty"`
+	RideGuideThumbnail string            `json:"ride_guide_thumbnail"`
+	RideGuideFile      string            `json:"ride_guide_file"`
+	Trainer            string            `json:"trainer"`
 }
 
 type odds struct {
