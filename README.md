@@ -41,12 +41,25 @@ connecting to the API, debugging and maintaining your code that little bit easie
 
 All Brands follow the same endpoint syntax, and provide identical output formats.
 
-The base URL for each brand is as follows: 
+
+The base URL for each brand is now as follows: 
+
+- Ladbrokes https://api.ladbrokes.com.au/affiliates/v1
+- Neds https://api.neds.com.au/affiliates/v1
+- BetStar https://api.betstar.com.au/affiliates/v1
+- BookMaker https://api.bookmaker.com.au/affiliates/v1
+
+*Deprecated API*
+The base URL for each brand was as follows: 
 
 - Ladbrokes https://api-affiliates.ladbrokes.com.au
 - Neds https://api-affiliates.neds.com.au
 - BetStar https://api-affiliates.betstar.com.au
 - BookMaker https://api-affiliates.bookmaker.com.au
+
+These API endpoints will continue to operate for a short time only, we will definitely be turning these off by Thur, 3rd October 2019. 
+Please make sure you redirect all your incoming calls through the newly named endpoints before then.
+
 
 In the document below, we will refer to this as `BASE_URL`
 
