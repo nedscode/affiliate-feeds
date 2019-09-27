@@ -57,7 +57,7 @@ The base URL for each brand was as follows:
 - BetStar https://api-affiliates.betstar.com.au
 - BookMaker https://api-affiliates.bookmaker.com.au
 
-These API endpoints will continue to operate for a short time only, we will definitely be turning these off by Thur, 3rd October 2019. 
+These API endpoints will continue to operate for a short time only, we will definitely be turning these off by Fri, 4th October 2019. 
 Please make sure you redirect all your incoming calls through the newly named endpoints before then.
 
 
