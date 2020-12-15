@@ -1,0 +1,2393 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-e033bdd3.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;go&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-fcb247c5.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="go">go</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#identification" class="toc-h2 toc-link" data-title="Identification">Identification</a>
+                  </li>
+                  <li>
+                    <a href="#id-fields" class="toc-h2 toc-link" data-title="ID Fields">ID Fields</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#response-formats" class="toc-h1 toc-link" data-title="Response Formats">Response Formats</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#json-format" class="toc-h2 toc-link" data-title="JSON Format">JSON Format</a>
+                  </li>
+                  <li>
+                    <a href="#xml-format" class="toc-h2 toc-link" data-title="XML Format">XML Format</a>
+                  </li>
+                  <li>
+                    <a href="#html-format" class="toc-h2 toc-link" data-title="HTML Format">HTML Format</a>
+                  </li>
+                  <li>
+                    <a href="#help-format" class="toc-h2 toc-link" data-title="Help Format">Help Format</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#request-parameter-formats" class="toc-h1 toc-link" data-title="Request Parameter Formats">Request Parameter Formats</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#date-fields" class="toc-h2 toc-link" data-title="Date Fields">Date Fields</a>
+                  </li>
+                  <li>
+                    <a href="#parameters-with-choices" class="toc-h2 toc-link" data-title="Parameters with Choices">Parameters with Choices</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#racing-apis" class="toc-h1 toc-link" data-title="Racing APIs">Racing APIs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#racing-meetings" class="toc-h2 toc-link" data-title="Racing Meetings">Racing Meetings</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-meeting" class="toc-h2 toc-link" data-title="Get a Specific Meeting">Get a Specific Meeting</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-race" class="toc-h2 toc-link" data-title="Get a Specific Race">Get a Specific Race</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sports-api" class="toc-h1 toc-link" data-title="Sports API">Sports API</a>
+          </li>
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#responseheader" class="toc-h2 toc-link" data-title="ResponseHeader">ResponseHeader</a>
+                  </li>
+                  <li>
+                    <a href="#meetingsresponse" class="toc-h2 toc-link" data-title="MeetingsResponse">MeetingsResponse</a>
+                  </li>
+                  <li>
+                    <a href="#meetingsrequestparams" class="toc-h2 toc-link" data-title="MeetingsRequestParams">MeetingsRequestParams</a>
+                  </li>
+                  <li>
+                    <a href="#meetingsdata" class="toc-h2 toc-link" data-title="MeetingsData">MeetingsData</a>
+                  </li>
+                  <li>
+                    <a href="#meeting" class="toc-h2 toc-link" data-title="Meeting">Meeting</a>
+                  </li>
+                  <li>
+                    <a href="#meetingrace" class="toc-h2 toc-link" data-title="MeetingRace">MeetingRace</a>
+                  </li>
+                  <li>
+                    <a href="#racesresponse" class="toc-h2 toc-link" data-title="RacesResponse">RacesResponse</a>
+                  </li>
+                  <li>
+                    <a href="#racesrequestparams" class="toc-h2 toc-link" data-title="RacesRequestParams">RacesRequestParams</a>
+                  </li>
+                  <li>
+                    <a href="#racesdata" class="toc-h2 toc-link" data-title="RacesData">RacesData</a>
+                  </li>
+                  <li>
+                    <a href="#race" class="toc-h2 toc-link" data-title="Race">Race</a>
+                  </li>
+                  <li>
+                    <a href="#raceresult" class="toc-h2 toc-link" data-title="RaceResult">RaceResult</a>
+                  </li>
+                  <li>
+                    <a href="#racedividend" class="toc-h2 toc-link" data-title="RaceDividend">RaceDividend</a>
+                  </li>
+                  <li>
+                    <a href="#raceposition" class="toc-h2 toc-link" data-title="RacePosition">RacePosition</a>
+                  </li>
+                  <li>
+                    <a href="#raceentrant" class="toc-h2 toc-link" data-title="RaceEntrant">RaceEntrant</a>
+                  </li>
+                  <li>
+                    <a href="#runnerweight" class="toc-h2 toc-link" data-title="RunnerWeight">RunnerWeight</a>
+                  </li>
+                  <li>
+                    <a href="#racerunner" class="toc-h2 toc-link" data-title="RaceRunner">RaceRunner</a>
+                  </li>
+                  <li>
+                    <a href="#odds" class="toc-h2 toc-link" data-title="Odds">Odds</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/nedscode/affiliate-feeds/issues'>Submit an Issue</a></li>
+            <li><a href='https://www.ladbrokes.com.au/contact-us'>Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Ladbrokes Affiliate API!</p>
+
+<p>The base URL is <code>https://api.ladbrokes.com.au/affiliates/v1</code>and further documentation may refer to this as <code>BASE_URL</code>.</p>
+
+<p>Dates &amp; times are returned in UTC using <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> unless otherwise specified.</p>
+<h2 id='identification'>Identification</h2>
+<blockquote>
+<p>Please include identifying Headers with all of your requests:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"From: joe@blogs.com.au"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"X-Partner: Joe Blogs Pty Ltd"</span>
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">"fmt"</span>
+    <span class="s">"io/ioutil"</span>
+    <span class="s">"net/http"</span>
+    <span class="s">"time"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c">// Always use a http client with a timeout</span>
+    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{</span>
+        <span class="n">Timeout</span><span class="o">:</span> <span class="n">time</span><span class="o">.</span><span class="n">Second</span> <span class="o">*</span> <span class="m">30</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c">// Set an appropriate API endpoint URL</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"api_endpoint_here"</span><span class="p">,</span> <span class="no">nil</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c">// Remember to set your identifying values to avoid being blocked</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"From"</span><span class="p">,</span> <span class="s">"joe@blogs.com.au"</span><span class="p">)</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"X-Partner"</span><span class="p">,</span> <span class="s">"Joe Blogs Pty Ltd"</span><span class="p">)</span>
+
+    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">defer</span> <span class="n">resp</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+
+    <span class="n">body</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">ioutil</span><span class="o">.</span><span class="n">ReadAll</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<blockquote>
+<p>Make sure to provide values that identify you otherwise you may end up being rate limited, or blocked.</p>
+</blockquote>
+
+<p>To avoid being blocked or inappropriately rate limited, please include Headers to identify who you are and provide a way to contact you if needed:</p>
+
+<p><code>From: joe@blogs.com.au</code></p>
+
+<p><code>X-Partner: Joe Blogs Pty Ltd</code></p>
+
+<aside class="notice">
+You must replace the values of the Headers with values that accurately describe who you are and how we can contact you if needed.
+</aside>
+<h2 id='id-fields'>ID Fields</h2>
+<p>All ID fields that are UUIDs make use of the <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)">Version 4 format</a> and conform to <a href="https://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>.</p>
+<h1 id='response-formats'>Response Formats</h1>
+<p>By default, responses are sent in <code>JSON</code> format. You may also request data formatted as <code>XML</code> or <code>HTML</code>.</p>
+
+<p>You can use the <code>enc</code> GET parameter to control the encoding format.</p>
+<h2 id='json-format'>JSON Format</h2>
+<p>The default for data payloads.</p>
+
+<p><code>?enc=json</code></p>
+<h2 id='xml-format'>XML Format</h2>
+<p>Not all endpoints support XML.</p>
+
+<p><code>?enc=xml</code></p>
+<h2 id='html-format'>HTML Format</h2>
+<p>Useful mainly for debugging/navigating.</p>
+
+<p><code>?enc=html</code></p>
+<h2 id='help-format'>Help Format</h2>
+<p>Returns a short description of the available parameters for the requested endpoint.</p>
+
+<p><code>?enc=help</code></p>
+<h1 id='request-parameter-formats'>Request Parameter Formats</h1><h2 id='date-fields'>Date Fields</h2>
+<p>Common parameter names:</p>
+
+<ul>
+<li><code>date_from</code></li>
+<li><code>date_to</code></li>
+</ul>
+
+<p>Dates accept strings in the format <code>YYYY-MM-DD</code> as well as several keywords:</p>
+
+<table><thead>
+<tr>
+<th>Keyword</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>now</code></td>
+<td>The current date and time</td>
+</tr>
+<tr>
+<td><code>today</code></td>
+<td>The current day</td>
+</tr>
+<tr>
+<td><code>week</code></td>
+<td>The start of the current week (where Monday is the start of the week)</td>
+</tr>
+<tr>
+<td><code>month</code></td>
+<td>The start of the current month</td>
+</tr>
+<tr>
+<td><code>all</code></td>
+<td>All available dates</td>
+</tr>
+</tbody></table>
+
+<p>Date ranges can be considered inclusive.</p>
+<h2 id='parameters-with-choices'>Parameters with Choices</h2>
+<blockquote>
+<p>Example response from a <code>?enc=help</code> request.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>Param: category        Default:    Choices: T,H,G, 
+
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="n">Param</span><span class="o">:</span> <span class="n">category</span>        <span class="n">Default</span><span class="o">:</span>    <span class="n">Choices</span><span class="o">:</span> <span class="n">T</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">G</span><span class="p">,</span> 
+
+</code></pre></div>
+<blockquote>
+<p>The value of <code>?category=VALUE</code> must be one of <code>T</code>, <code>H</code>, or <code>G</code> for the request to be valid.</p>
+</blockquote>
+
+<p>If a parameter has a <code>Choices</code> set (as displayed in the <code>?enc=help</code> response for that endpoint), then the input data must be one of the values shown.</p>
+<h1 id='racing-apis'>Racing APIs</h1>
+<p>Available endpoints:</p>
+
+<ul>
+<li><a href="#racing-meetings"><code>BASE_URL</code>/meetings</a></li>
+<li><a href="#get-a-specific-meeting"><code>BASE_URL</code>/meetings/<code>MEETING_ID</code></a></li>
+<li><a href="#get-a-specific-race"><code>BASE_URL</code>/events/<code>EVENT_ID</code></a></li>
+</ul>
+<h2 id='racing-meetings'>Racing Meetings</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api-affiliates.ladbrokes.com.au/affiliates/v1/racing/meetings"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"From: joe@blogs.com.au"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"X-Partner: Joe Blogs Pty Ltd"</span>
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">"encoding/json"</span>
+    <span class="s">"fmt"</span>
+    <span class="s">"net/http"</span>
+    <span class="s">"time"</span>
+<span class="p">)</span>
+
+<span class="k">type</span> <span class="n">Response</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Header</span>     <span class="n">ResponseHeader</span> <span class="s">`json:"header" xml:"header"`</span>
+    <span class="n">Parameters</span> <span class="n">RequestParams</span>  <span class="s">`json:"params" xml:"params"`</span>
+    <span class="n">Data</span>       <span class="n">Data</span>           <span class="s">`json:"data" xml:"data"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">ResponseHeader</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Title</span>         <span class="kt">string</span>    <span class="s">`json:"title" xml:"title"`</span>
+    <span class="n">GeneratedTime</span> <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"generated_time" xml:"generated_time"`</span>
+    <span class="n">URL</span>           <span class="kt">string</span>    <span class="s">`json:"url" xml:"url"`</span>
+    <span class="n">Error</span>         <span class="kt">string</span>    <span class="s">`json:"error,omitempty" xml:"error,omitempty"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">RequestParams</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Encoding</span> <span class="kt">string</span>    <span class="s">`json:"enc" xml:"Encoding"`</span>
+    <span class="n">ID</span>       <span class="kt">string</span>    <span class="s">`json:"id" xml:"MeetingID"`</span>
+    <span class="n">DateFrom</span> <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"date_from" xml:"FromDate"`</span>
+    <span class="n">DateTo</span>   <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"date_to" xml:"ToDate"`</span>
+    <span class="n">Category</span> <span class="kt">string</span>    <span class="s">`json:"type" xml:"Category"`</span>
+    <span class="n">Country</span>  <span class="kt">string</span>    <span class="s">`json:"country" xml:"Country"`</span>
+    <span class="n">Limit</span>    <span class="kt">int</span>       <span class="s">`json:"limit" xml:"Limit"`</span>
+    <span class="n">Offset</span>   <span class="kt">int</span>       <span class="s">`json:"offset" xml:"Offset"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Data</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Meetings</span> <span class="p">[]</span><span class="o">*</span><span class="n">Meeting</span> <span class="s">`json:"meetings" xml:"meetings"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Meeting</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Meeting</span>      <span class="kt">string</span>    <span class="s">`json:"meeting" xml:"meeting"`</span>
+    <span class="n">Name</span>         <span class="kt">string</span>    <span class="s">`json:"name" xml:"name"`</span>
+    <span class="n">Date</span>         <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"date" xml:"date"`</span>
+    <span class="n">Category</span>     <span class="kt">string</span>    <span class="s">`json:"category" xml:"category"`</span>
+    <span class="n">CategoryName</span> <span class="kt">string</span>    <span class="s">`json:"category_name" xml:"category_name"`</span>
+    <span class="n">Country</span>      <span class="kt">string</span>    <span class="s">`json:"country" xml:"country"`</span>
+    <span class="n">State</span>        <span class="kt">string</span>    <span class="s">`json:"state" xml:"state"`</span>
+    <span class="n">Races</span>        <span class="p">[]</span><span class="o">*</span><span class="n">Race</span>   <span class="s">`json:"races" xml:"races"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Race</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">ID</span>             <span class="kt">string</span>    <span class="s">`json:"id" xml:"id"`</span>
+    <span class="n">RaceNumber</span>     <span class="kt">uint32</span>    <span class="s">`json:"race_number" xml:"race_number"`</span>
+    <span class="n">Name</span>           <span class="kt">string</span>    <span class="s">`json:"name" xml:"name"`</span>
+    <span class="n">StartTime</span>      <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"start_time" xml:"start_time"`</span>
+    <span class="n">TrackCondition</span> <span class="kt">string</span>    <span class="s">`json:"track_condition" xml:"track_condition"`</span>
+    <span class="n">Distance</span>       <span class="kt">uint32</span>    <span class="s">`json:"distance" xml:"distance"`</span>
+    <span class="n">Weather</span>        <span class="kt">string</span>    <span class="s">`json:"weather" xml:"weather"`</span>
+    <span class="n">Country</span>        <span class="kt">string</span>    <span class="s">`json:"country" xml:"country"`</span>
+    <span class="n">State</span>          <span class="kt">string</span>    <span class="s">`json:"state" xml:"state"`</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c">// Always use a http client with a timeout</span>
+    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{</span>
+        <span class="n">Timeout</span><span class="o">:</span> <span class="n">time</span><span class="o">.</span><span class="n">Second</span> <span class="o">*</span> <span class="m">30</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"https://api-affiliates.ladbrokes.com.au/affiliates/v1/racing/meetings"</span><span class="p">,</span> <span class="no">nil</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c">// Remember to set your identifying values to avoid being blocked</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"From"</span><span class="p">,</span> <span class="s">"joe@blogs.com.au"</span><span class="p">)</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"X-Partner"</span><span class="p">,</span> <span class="s">"Joe Blogs Pty Ltd"</span><span class="p">)</span>
+
+    <span class="n">r</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">defer</span> <span class="n">r</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+
+    <span class="k">var</span> <span class="n">response</span> <span class="n">Response</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">NewDecoder</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span><span class="o">.</span><span class="n">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">response</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%s Retrieved %d meetings."</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">GeneratedTime</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">Meetings</span><span class="p">))</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<blockquote>
+<p>Example JSON response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Race Meetings"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"generated_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T08:19:47.069943716Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/affiliates/v1/racing/meetings"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"enc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T08:19:47.06993608Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T08:19:47.069938012Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">" "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">" "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"meetings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"meeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7e09a407-d61e-407b-94b3-fe5d293cbfde"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queanbeyan"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T00:00:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thoroughbred Horse Racing"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NSW"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"races"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2b936876-7524-40f5-be6a-3b1d8cc844af"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"race_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jockey Challenge - Queanbeyan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T02:15:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"track_condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7ab0527f-0746-415b-82cd-968e14629aaa"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"race_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Skyview Windows Mdn Plate"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T02:15:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"track_condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all meetings.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api-affiliates.ladbrokes.com.au/affiliates/v1/racing/meetings</code></p>
+<h3 id='meeting-request-parameters'>Meeting Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Choices</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>enc</code></td>
+<td><code>json</code></td>
+<td><code>json</code>,<code>xml</code>,<code>html</code>,<code>help</code></td>
+<td>The response encoding format.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td></td>
+<td></td>
+<td>If provided, get the requested meeting by its ID.</td>
+</tr>
+<tr>
+<td><code>date_from</code></td>
+<td><code>week</code></td>
+<td></td>
+<td>See <a href="#date-fields">date formats</a>.</td>
+</tr>
+<tr>
+<td><code>date_to</code></td>
+<td><code>now</code></td>
+<td></td>
+<td>See <a href="#date-fields">date formats</a>.</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td></td>
+<td><code>T</code>,<code>H</code>,<code>G</code></td>
+<td>Allows limiting the response to one of Thoroughbred, Harness or Greyhound meetings.</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td></td>
+<td><code>AUS</code>,<code>ARG</code>,<code>CA</code>,<code>CHI</code>,<code>DEU</code>,<code>FR</code>,...</td>
+<td>Allows limiting the response to only the requested country. See the <code>help</code> encoding for a full list.</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td><code>100</code></td>
+<td></td>
+<td>Limit the number of items included in the response. Max of 200.</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td><code>0</code></td>
+<td></td>
+<td>Skip the first <code>offset</code> responses.</td>
+</tr>
+</tbody></table>
+<h3 id='response-schema'>Response Schema</h3>
+<p><a href="#meetingsresponse">MeetingsResponse</a></p>
+
+<aside class="success">
+Remember — Please include your identification headers!
+</aside>
+<h2 id='get-a-specific-meeting'>Get a Specific Meeting</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api-affiliates.ladbrokes.com.au/affiliates/v1/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"From: joe@blogs.com.au"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"X-Partner: Joe Blogs Pty Ltd"</span>
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">"encoding/json"</span>
+    <span class="s">"fmt"</span>
+    <span class="s">"net/http"</span>
+    <span class="s">"time"</span>
+<span class="p">)</span>
+
+<span class="k">type</span> <span class="n">Response</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Header</span>     <span class="n">ResponseHeader</span> <span class="s">`json:"header" xml:"header"`</span>
+    <span class="n">Parameters</span> <span class="n">RequestParams</span>  <span class="s">`json:"params" xml:"params"`</span>
+    <span class="n">Data</span>       <span class="n">Data</span>           <span class="s">`json:"data" xml:"data"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">ResponseHeader</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Title</span>         <span class="kt">string</span>    <span class="s">`json:"title" xml:"title"`</span>
+    <span class="n">GeneratedTime</span> <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"generated_time" xml:"generated_time"`</span>
+    <span class="n">URL</span>           <span class="kt">string</span>    <span class="s">`json:"url" xml:"url"`</span>
+    <span class="n">Error</span>         <span class="kt">string</span>    <span class="s">`json:"error,omitempty" xml:"error,omitempty"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">RequestParams</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Encoding</span> <span class="kt">string</span>    <span class="s">`json:"enc" xml:"Encoding"`</span>
+    <span class="n">ID</span>       <span class="kt">string</span>    <span class="s">`json:"id" xml:"MeetingID"`</span>
+    <span class="n">DateFrom</span> <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"date_from" xml:"FromDate"`</span>
+    <span class="n">DateTo</span>   <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"date_to" xml:"ToDate"`</span>
+    <span class="n">Category</span> <span class="kt">string</span>    <span class="s">`json:"type" xml:"Category"`</span>
+    <span class="n">Country</span>  <span class="kt">string</span>    <span class="s">`json:"country" xml:"Country"`</span>
+    <span class="n">Limit</span>    <span class="kt">int</span>       <span class="s">`json:"limit" xml:"Limit"`</span>
+    <span class="n">Offset</span>   <span class="kt">int</span>       <span class="s">`json:"offset" xml:"Offset"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Data</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Meetings</span> <span class="p">[]</span><span class="o">*</span><span class="n">Meeting</span> <span class="s">`json:"meetings" xml:"meetings"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Meeting</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Meeting</span>      <span class="kt">string</span>    <span class="s">`json:"meeting" xml:"meeting"`</span>
+    <span class="n">Name</span>         <span class="kt">string</span>    <span class="s">`json:"name" xml:"name"`</span>
+    <span class="n">Date</span>         <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"date" xml:"date"`</span>
+    <span class="n">Category</span>     <span class="kt">string</span>    <span class="s">`json:"category" xml:"category"`</span>
+    <span class="n">CategoryName</span> <span class="kt">string</span>    <span class="s">`json:"category_name" xml:"category_name"`</span>
+    <span class="n">Country</span>      <span class="kt">string</span>    <span class="s">`json:"country" xml:"country"`</span>
+    <span class="n">State</span>        <span class="kt">string</span>    <span class="s">`json:"state" xml:"state"`</span>
+    <span class="n">Races</span>        <span class="p">[]</span><span class="o">*</span><span class="n">Race</span>   <span class="s">`json:"races" xml:"races"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Race</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">ID</span>             <span class="kt">string</span>    <span class="s">`json:"id" xml:"id"`</span>
+    <span class="n">RaceNumber</span>     <span class="kt">uint32</span>    <span class="s">`json:"race_number" xml:"race_number"`</span>
+    <span class="n">Name</span>           <span class="kt">string</span>    <span class="s">`json:"name" xml:"name"`</span>
+    <span class="n">StartTime</span>      <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"start_time" xml:"start_time"`</span>
+    <span class="n">TrackCondition</span> <span class="kt">string</span>    <span class="s">`json:"track_condition" xml:"track_condition"`</span>
+    <span class="n">Distance</span>       <span class="kt">uint32</span>    <span class="s">`json:"distance" xml:"distance"`</span>
+    <span class="n">Weather</span>        <span class="kt">string</span>    <span class="s">`json:"weather" xml:"weather"`</span>
+    <span class="n">Country</span>        <span class="kt">string</span>    <span class="s">`json:"country" xml:"country"`</span>
+    <span class="n">State</span>          <span class="kt">string</span>    <span class="s">`json:"state" xml:"state"`</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c">// Always use a http client with a timeout</span>
+    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{</span>
+        <span class="n">Timeout</span><span class="o">:</span> <span class="n">time</span><span class="o">.</span><span class="n">Second</span> <span class="o">*</span> <span class="m">30</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"https://api-affiliates.ladbrokes.com.au/affiliates/v1/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b"</span><span class="p">,</span> <span class="no">nil</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c">// Remember to set your identifying values to avoid being blocked</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"From"</span><span class="p">,</span> <span class="s">"joe@blogs.com.au"</span><span class="p">)</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"X-Partner"</span><span class="p">,</span> <span class="s">"Joe Blogs Pty Ltd"</span><span class="p">)</span>
+
+    <span class="n">r</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">defer</span> <span class="n">r</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+
+    <span class="k">var</span> <span class="n">response</span> <span class="n">Response</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">NewDecoder</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span><span class="o">.</span><span class="n">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">response</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%s Retrieved %d meetings."</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">GeneratedTime</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">Meetings</span><span class="p">))</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<blockquote>
+<p>Example JSON response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Race Meetings"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"generated_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T08:19:47.069943716Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/affiliates/v1/racing/meetings"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"enc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T08:19:47.06993608Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T08:19:47.069938012Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">" "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">" "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"meetings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"meeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7e09a407-d61e-407b-94b3-fe5d293cbfde"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queanbeyan"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T00:00:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thoroughbred Horse Racing"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NSW"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"races"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2b936876-7524-40f5-be6a-3b1d8cc844af"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"race_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jockey Challenge - Queanbeyan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T02:15:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"track_condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7ab0527f-0746-415b-82cd-968e14629aaa"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"race_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Skyview Windows Mdn Plate"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T02:15:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"track_condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific meeting.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api-affiliates.ladbrokes.com.au/affiliates/v1/racing/meetings/&lt;ID&gt;</code></p>
+<h3 id='meeting-request-parameters-2'>Meeting Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Choices</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>enc</code></td>
+<td><code>json</code></td>
+<td><code>json</code>,<code>xml</code>,<code>html</code>,<code>help</code></td>
+<td>The response encoding format.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td></td>
+<td></td>
+<td>The ID of the meeting to retrieve.</td>
+</tr>
+</tbody></table>
+<h3 id='response-schema-2'>Response Schema</h3>
+<p><a href="#meetingsresponse">MeetingsResponse</a></p>
+
+<aside class="success">
+Remember — Please include your identification headers!
+</aside>
+<h2 id='get-a-specific-race'>Get a Specific Race</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api-affiliates.ladbrokes.com.au/affiliates/v1/racing/events/ad76bf91-684d-4a49-bf04-b4284237e65d"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"From: joe@blogs.com.au"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"X-Partner: Joe Blogs Pty Ltd"</span>
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">"encoding/json"</span>
+    <span class="s">"fmt"</span>
+    <span class="s">"net/http"</span>
+    <span class="s">"time"</span>
+<span class="p">)</span>
+
+<span class="k">type</span> <span class="n">Response</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Header</span>     <span class="n">ResponseHeader</span> <span class="s">`json:"header" xml:"header"`</span>
+    <span class="n">Parameters</span> <span class="n">RequestParams</span>  <span class="s">`json:"params" xml:"params"`</span>
+    <span class="n">Data</span>       <span class="n">Data</span>           <span class="s">`json:"data" xml:"data"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">ResponseHeader</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Title</span>         <span class="kt">string</span>    <span class="s">`json:"title" xml:"title"`</span>
+    <span class="n">GeneratedTime</span> <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"generated_time" xml:"generated_time"`</span>
+    <span class="n">URL</span>           <span class="kt">string</span>    <span class="s">`json:"url" xml:"url"`</span>
+    <span class="n">Error</span>         <span class="kt">string</span>    <span class="s">`json:"error,omitempty" xml:"error,omitempty"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">RequestParams</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Encoding</span> <span class="kt">string</span>    <span class="s">`json:"enc" xml:"Encoding"`</span>
+    <span class="n">ID</span>       <span class="kt">string</span>    <span class="s">`json:"id" xml:"EventID"`</span>
+    <span class="n">DateFrom</span> <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"date_from" xml:"FromDate"`</span>
+    <span class="n">DateTo</span>   <span class="n">time</span><span class="o">.</span><span class="n">Time</span> <span class="s">`json:"date_to" xml:"ToDate"`</span>
+    <span class="n">Category</span> <span class="kt">string</span>    <span class="s">`json:"type" xml:"Category"`</span>
+    <span class="n">Country</span>  <span class="kt">string</span>    <span class="s">`json:"country" xml:"Country"`</span>
+    <span class="n">Limit</span>    <span class="kt">int</span>       <span class="s">`json:"limit" xml:"Limit"`</span>
+    <span class="n">Offset</span>   <span class="kt">int</span>       <span class="s">`json:"offset" xml:"Offset"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Data</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Race</span>        <span class="n">Race</span>        <span class="s">`json:"race"`</span>
+    <span class="n">Results</span>     <span class="p">[]</span><span class="o">*</span><span class="n">Result</span>   <span class="s">`json:"results,omitempty"`</span>
+    <span class="n">Dividends</span>   <span class="p">[]</span><span class="o">*</span><span class="n">Dividend</span> <span class="s">`json:"dividends,omitempty"`</span>
+    <span class="n">Favourite</span>   <span class="n">Entrant</span>     <span class="s">`json:"favourite"`</span>
+    <span class="n">Runners</span>     <span class="p">[]</span><span class="o">*</span><span class="n">Runner</span>   <span class="s">`json:"runners"`</span>
+    <span class="n">Derivatives</span> <span class="p">[]</span><span class="o">*</span><span class="n">Runner</span>   <span class="s">`json:"derivatives"`</span>
+    <span class="n">Mover</span>       <span class="n">Entrant</span>     <span class="s">`json:"mover"`</span>
+    <span class="n">Error</span>       <span class="kt">string</span>      <span class="s">`json:"error"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Race</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">EventID</span>               <span class="kt">string</span> <span class="s">`json:"event_id"`</span>
+    <span class="n">MeetingName</span>           <span class="kt">string</span> <span class="s">`json:"meeting_name"`</span>
+    <span class="n">MeetingID</span>             <span class="kt">string</span> <span class="s">`json:"meeting_id"`</span>
+    <span class="n">Status</span>                <span class="kt">string</span> <span class="s">`json:"status"`</span>
+    <span class="n">Description</span>           <span class="kt">string</span> <span class="s">`json:"description"`</span>
+    <span class="n">AdvertisedStart</span>       <span class="kt">int64</span>  <span class="s">`json:"advertised_start"`</span>
+    <span class="n">ActualStart</span>           <span class="kt">int64</span>  <span class="s">`json:"actual_start"`</span>
+    <span class="n">AdvertisedStartString</span> <span class="kt">string</span> <span class="s">`json:"advertised_start_string"`</span>
+    <span class="n">ActualStartString</span>     <span class="kt">string</span> <span class="s">`json:"actual_start_string"`</span>
+    <span class="n">RaceNumber</span>            <span class="kt">uint32</span> <span class="s">`json:"race_number"`</span>
+    <span class="n">Type</span>                  <span class="kt">string</span> <span class="s">`json:"type"`</span>
+    <span class="n">Country</span>               <span class="kt">string</span> <span class="s">`json:"country"`</span>
+    <span class="n">State</span>                 <span class="kt">string</span> <span class="s">`json:"state"`</span>
+    <span class="n">Distance</span>              <span class="kt">uint32</span> <span class="s">`json:"distance"`</span>
+    <span class="n">Weather</span>               <span class="kt">string</span> <span class="s">`json:"weather"`</span>
+    <span class="n">FormGuide</span>             <span class="kt">string</span> <span class="s">`json:"form_guide"`</span>
+    <span class="n">Comment</span>               <span class="kt">string</span> <span class="s">`json:"comment"`</span>
+    <span class="n">SilkBaseURL</span>           <span class="kt">string</span> <span class="s">`json:"silk_base_url"`</span>
+    <span class="n">TrackCondition</span>        <span class="kt">string</span> <span class="s">`json:"track_condition"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Result</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Position</span>     <span class="kt">uint32</span>  <span class="s">`json:"position"`</span>
+    <span class="n">Name</span>         <span class="kt">string</span>  <span class="s">`json:"name"`</span>
+    <span class="n">Barrier</span>      <span class="kt">uint32</span>  <span class="s">`json:"barrier"`</span>
+    <span class="n">RunnerNumber</span> <span class="kt">uint32</span>  <span class="s">`json:"runner_number"`</span>
+    <span class="n">MarginLength</span> <span class="kt">float32</span> <span class="s">`json:"margin_length"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Dividend</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">ID</span>          <span class="kt">string</span>      <span class="s">`json:"id"`</span>
+    <span class="n">Tote</span>        <span class="kt">string</span>      <span class="s">`json:"tote"`</span>
+    <span class="n">ProductName</span> <span class="kt">string</span>      <span class="s">`json:"product_name"`</span>
+    <span class="n">Status</span>      <span class="kt">string</span>      <span class="s">`json:"status"`</span>
+    <span class="n">Dividend</span>    <span class="kt">float32</span>     <span class="s">`json:"dividend"`</span>
+    <span class="n">PoolSize</span>    <span class="kt">float32</span>     <span class="s">`json:"pool_size"`</span>
+    <span class="n">JackpotSize</span> <span class="kt">float32</span>     <span class="s">`json:"jackpot_size"`</span>
+    <span class="n">Positions</span>   <span class="p">[]</span><span class="o">*</span><span class="n">Position</span> <span class="s">`json:"positions"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Position</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">RunnerNumber</span> <span class="kt">uint32</span> <span class="s">`json:"runner_number"`</span>
+    <span class="n">Position</span>     <span class="kt">uint32</span> <span class="s">`json:"position"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Entrant</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">EntrantID</span>     <span class="kt">string</span> <span class="s">`json:"-"`</span>
+    <span class="n">MarketName</span>    <span class="kt">string</span> <span class="s">`json:"market_name"`</span>
+    <span class="n">PrimaryMarket</span> <span class="kt">bool</span>   <span class="s">`json:"primary_market"`</span>
+    <span class="n">Name</span>          <span class="kt">string</span> <span class="s">`json:"name"`</span>
+    <span class="n">IsScratched</span>   <span class="kt">bool</span>   <span class="s">`json:"is_scratched"`</span>
+    <span class="n">ScratchTime</span>   <span class="kt">int64</span>  <span class="s">`json:"scratch_time"`</span>
+    <span class="n">Barrier</span>       <span class="kt">uint32</span> <span class="s">`json:"barrier"`</span>
+    <span class="n">RunnerNumber</span>  <span class="kt">int</span>    <span class="s">`json:"runner_number"`</span>
+    <span class="n">PrizeMoney</span>    <span class="kt">string</span> <span class="s">`json:"prize_money"`</span>
+    <span class="n">Age</span>           <span class="kt">int</span>    <span class="s">`json:"age"`</span>
+    <span class="n">Sex</span>           <span class="kt">string</span> <span class="s">`json:"sex"`</span>
+    <span class="n">Colour</span>        <span class="kt">string</span> <span class="s">`json:"colour"`</span>
+    <span class="n">SilkColours</span>   <span class="kt">string</span> <span class="s">`json:"silk_colours"`</span>
+    <span class="n">FormComment</span>   <span class="kt">string</span> <span class="s">`json:"form_comment"`</span>
+    <span class="n">ClassLevel</span>    <span class="kt">string</span> <span class="s">`json:"class_level"`</span>
+    <span class="n">Jockey</span>        <span class="kt">string</span> <span class="s">`json:"jockey"`</span>
+    <span class="n">Country</span>       <span class="kt">string</span> <span class="s">`json:"country"`</span>
+    <span class="n">TrainerName</span>   <span class="kt">string</span> <span class="s">`json:"trainer_name"`</span>
+    <span class="n">Weight</span>        <span class="k">struct</span> <span class="p">{</span>
+        <span class="n">Allocated</span> <span class="kt">string</span> <span class="s">`json:"allocated"`</span>
+        <span class="n">Total</span>     <span class="kt">string</span> <span class="s">`json:"total"`</span>
+    <span class="p">}</span> <span class="s">`json:"weight"`</span>
+    <span class="n">Favourite</span> <span class="kt">bool</span> <span class="s">`json:"favourite"`</span>
+    <span class="n">Mover</span>     <span class="kt">bool</span> <span class="s">`json:"mover"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Runner</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Entrant</span>
+    <span class="n">Meta</span>               <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span> <span class="s">`json:"meta" xml:"-"`</span>
+    <span class="n">Flucs</span>              <span class="p">[]</span><span class="kt">float64</span>         <span class="s">`json:"flucs" xml:"-"`</span>
+    <span class="n">Odds</span>               <span class="n">Odds</span>              <span class="s">`json:"odds"`</span>
+    <span class="n">ScrTime</span>            <span class="o">*</span><span class="n">time</span><span class="o">.</span><span class="n">Time</span>        <span class="s">`json:"scr_time"`</span>
+    <span class="n">CompetitorID</span>       <span class="kt">string</span>            <span class="s">`json:"competitor_id"`</span>
+    <span class="n">RideGuideExists</span>    <span class="kt">bool</span>              <span class="s">`json:"ride_guide_exists"`</span>
+    <span class="n">RideGuideThumbnail</span> <span class="kt">string</span>            <span class="s">`json:"ride_guide_thumbnail"`</span>
+    <span class="n">RideGuideFile</span>      <span class="kt">string</span>            <span class="s">`json:"ride_guide_file"`</span>
+    <span class="n">Trainer</span>            <span class="kt">string</span>            <span class="s">`json:"trainer"`</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">Odds</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">FixedWin</span>   <span class="kt">float64</span> <span class="s">`json:"fixed_win"`</span>
+    <span class="n">FixedPlace</span> <span class="kt">float64</span> <span class="s">`json:"fixed_place"`</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c">// Always use a http client with a timeout</span>
+    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{</span>
+        <span class="n">Timeout</span><span class="o">:</span> <span class="n">time</span><span class="o">.</span><span class="n">Second</span> <span class="o">*</span> <span class="m">30</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"https://api-affiliates.ladbrokes.com.au/affiliates/v1/racing/events/ad76bf91-684d-4a49-bf04-b4284237e65d"</span><span class="p">,</span> <span class="no">nil</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c">// Remember to set your identifying values to avoid being blocked</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"From"</span><span class="p">,</span> <span class="s">"joe@blogs.com.au"</span><span class="p">)</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"X-Partner"</span><span class="p">,</span> <span class="s">"Joe Blogs Pty Ltd"</span><span class="p">)</span>
+
+    <span class="n">r</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">defer</span> <span class="n">r</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+
+    <span class="k">var</span> <span class="n">response</span> <span class="n">Response</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">NewDecoder</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span><span class="o">.</span><span class="n">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">response</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"%s Retrieved %s"</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">GeneratedTime</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">Race</span><span class="o">.</span><span class="n">Description</span><span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<blockquote>
+<p>Example JSON response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event Details: ad76bf91-684d-4a49-bf04-b4284237e65d"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"generated_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10T08:44:53.024562314Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/affiliates/v1/racing/events?id=ad76bf91-684d-4a49-bf04-b4284237e65d"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"enc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ad76bf91-684d-4a49-bf04-b4284237e65d"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">" "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"race"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ad76bf91-684d-4a49-bf04-b4284237e65d"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"meeting_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Palm Beach"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"meeting_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1f2d507d-e4b7-4d14-8463-17842301684b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Race 5"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"advertised_start"</span><span class="p">:</span><span class="w"> </span><span class="mi">1566151560</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actual_start"</span><span class="p">:</span><span class="w"> </span><span class="mi">1566151560</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"advertised_start_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-18 18:06:00 +0000 UTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actual_start_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-18 18:06:00 +0000 UTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"race_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"form_guide"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"silk_base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"track_condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hot Dog Safari"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"barrier"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"margin_length"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Megan Rapinoe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"barrier"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"margin_length"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pj Smoke Out"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"barrier"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"margin_length"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"dividends"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0fdd0e77-e219-4d01-8f21-dd17427f8af6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tote"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNKNOWN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trifecta"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dividend"</span><span class="p">:</span><span class="w"> </span><span class="mf">133.71</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pool_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"jackpot_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"positions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25168e14-f1d6-4664-9ced-0233aa1df8d8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tote"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNKNOWN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exacta"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dividend"</span><span class="p">:</span><span class="w"> </span><span class="mf">30.5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pool_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"jackpot_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"positions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"favourite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"market_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final Field"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"primary_market"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atascocita Leadn"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_scratched"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"scratch_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"barrier"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"prize_money"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"colour"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"silk_colours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"form_comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"class_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"jockey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trainer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"allocated"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"favourite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mover"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"runners"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"market_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final Field"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"primary_market"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kissa"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"is_scratched"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scratch_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"barrier"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"prize_money"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"colour"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"silk_colours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"form_comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"jockey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"trainer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"allocated"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"favourite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mover"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"flucs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mf">4.6</span><span class="p">,</span><span class="w">
+          </span><span class="mf">4.8</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"odds"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"fixed_win"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.8</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"fixed_place"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.75</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"scr_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"competitor_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ride_guide_exists"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ride_guide_thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ride_guide_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"trainer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"market_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final Field"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"primary_market"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arkans Canberra"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"is_scratched"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scratch_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"barrier"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"prize_money"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"colour"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"silk_colours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"form_comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"class_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"jockey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"trainer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"allocated"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"favourite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mover"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"flucs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="mi">11</span><span class="p">,</span><span class="w">
+          </span><span class="mi">12</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"odds"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"fixed_win"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"fixed_place"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"scr_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"competitor_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ride_guide_exists"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ride_guide_thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ride_guide_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"trainer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"derivatives"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mover"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"market_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final Field"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"primary_market"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hot Dog Safari"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_scratched"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"scratch_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"barrier"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"prize_money"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"colour"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"silk_colours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"form_comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"class_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"jockey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trainer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"allocated"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"favourite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mover"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific race.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api-affiliates.ladbrokes.com.au/affiliates/v1/racing/events/{id}</code></p>
+<h3 id='race-request-parameters'>Race Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Choices</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>enc</code></td>
+<td><code>json</code></td>
+<td><code>json</code>,<code>xml</code>,<code>html</code>,<code>help</code></td>
+<td>The response encoding format.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td></td>
+<td></td>
+<td>The ID of the race to retrieve.</td>
+</tr>
+</tbody></table>
+<h3 id='response-schema-3'>Response Schema</h3>
+<p><a href="#racesresponse">RacesResponse</a></p>
+
+<aside class="success">
+Remember — Please include your identification headers!
+</aside>
+<h1 id='sports-api'>Sports API</h1>
+<aside class="warning">
+The sports API is not available via the affiliates API.
+</aside>
+<h1 id='schemas'>Schemas</h1><h2 id='responseheader'>ResponseHeader</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"generated_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>The title of this response.</td>
+</tr>
+<tr>
+<td>generated_time</td>
+<td>datetime</td>
+<td>The date and time this response was generated. In <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>The relative URL representing this response.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>(Optional) The details of any error that occurred while servicing the request.</td>
+</tr>
+</tbody></table>
+<h2 id='meetingsresponse'>MeetingsResponse</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>header</td>
+<td><a href="#responseheader">ResponseHeader</a></td>
+<td>Meta data describing the response.</td>
+</tr>
+<tr>
+<td>params</td>
+<td><a href="#meetingsrequestparams">MeetingsRequestParams</a></td>
+<td>The parameters sent in this request.</td>
+</tr>
+<tr>
+<td>data</td>
+<td><a href="#meetingsdata">MeetingsData</a></td>
+<td>The meeting data.</td>
+</tr>
+</tbody></table>
+<h2 id='meetingsrequestparams'>MeetingsRequestParams</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"enc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">" "</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">" "</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>See <a href="#meeting-request-parameters">Meeting Request Parameters</a>.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>enc</td>
+<td>string</td>
+<td>The encoding format for the response.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>UUIDv4 of the meeting requested, if applicable.</td>
+</tr>
+<tr>
+<td>date_from</td>
+<td>datetime</td>
+<td>The date and time to request meetings after. In <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.</td>
+</tr>
+<tr>
+<td>date_to</td>
+<td>datetime</td>
+<td>The date and time to request meetings until. In <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.</td>
+</tr>
+<tr>
+<td>category</td>
+<td>string</td>
+<td>Limit the response to the requested category, if applicable.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>Limit the response to the requested country, if applicable.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>int</td>
+<td>Limit the number of items in the response to the requested number.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>int</td>
+<td>Offset the items by the requested number. Use in conjunction with <code>limit</code> to support pagination.</td>
+</tr>
+</tbody></table>
+<h2 id='meetingsdata'>MeetingsData</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"meetings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>meetings</td>
+<td>[]<a href="#meeting">Meeting</a></td>
+<td>Array of Meetings.</td>
+</tr>
+</tbody></table>
+<h2 id='meeting'>Meeting</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"meeting"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DDT00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"races"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>meeting</td>
+<td>string</td>
+<td>UUIDv4 id of the meeting.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of the meeting location.</td>
+</tr>
+<tr>
+<td>date</td>
+<td>date</td>
+<td>The date that the meeting occurs on.</td>
+</tr>
+<tr>
+<td>category</td>
+<td>string</td>
+<td>One of <code>T</code>, <code>G</code>, or <code>H</code>.</td>
+</tr>
+<tr>
+<td>category_name</td>
+<td>string</td>
+<td>One of <code>Thoroughbred Horse Racing</code>, <code>Greyhound Racing</code> or <code>Harness Horse Racing</code>.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>The country that the meeting occurs in, if available.</td>
+</tr>
+<tr>
+<td>State</td>
+<td>string</td>
+<td>The state that the meeting occurs in within the country, if available.</td>
+</tr>
+<tr>
+<td>Races</td>
+<td>[]<a href="#meetingrace">MeetingRace</a></td>
+<td>Array of Races.</td>
+</tr>
+</tbody></table>
+<h2 id='meetingrace'>MeetingRace</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"race_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"track_condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>UUIDv4 id of the race.</td>
+</tr>
+<tr>
+<td>race_number</td>
+<td>int</td>
+<td>The race number within the meeting. <code>0</code> is used for special races.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of the race.</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>datetime</td>
+<td>The scheduled start time of the race. In <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.</td>
+</tr>
+<tr>
+<td>track_condition</td>
+<td>string</td>
+<td>The condition of the track, if available.</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>int</td>
+<td>The distance of the track, if available.</td>
+</tr>
+<tr>
+<td>weather</td>
+<td>string</td>
+<td>The weather at the track, if available.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>The country that the meeting occurs in, if available.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>The state that the meeting occurs in within the country, if available.</td>
+</tr>
+</tbody></table>
+<h2 id='racesresponse'>RacesResponse</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>header</td>
+<td><a href="#responseheader">ResponseHeader</a></td>
+<td>Meta data describing the response.</td>
+</tr>
+<tr>
+<td>params</td>
+<td><a href="#racesrequestparams">RacesRequestParams</a></td>
+<td>The parameters sent in this request.</td>
+</tr>
+<tr>
+<td>data</td>
+<td><a href="#racesdata">RacesData</a></td>
+<td>The races data.</td>
+</tr>
+</tbody></table>
+<h2 id='racesrequestparams'>RacesRequestParams</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"enc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>See <a href="#race-request-parameters">Race Request Parameters</a>.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>enc</td>
+<td>string</td>
+<td>The encoding format for the response.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>UUIDv4 of the race requested.</td>
+</tr>
+</tbody></table>
+<h2 id='racesdata'>RacesData</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"race"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"dividends"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"favourite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"runners"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"derivatives"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mover"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>race</td>
+<td><a href="race">Race</a></td>
+<td>The race data.</td>
+</tr>
+<tr>
+<td>results</td>
+<td>[]<a href="#raceresult">RaceResult</a></td>
+<td>The race results, if available. Note: omitted if empty.</td>
+</tr>
+<tr>
+<td>dividends</td>
+<td>[]<a href="#racedividend">RaceDividend</a></td>
+<td>The race dividends, if available. Note: omitted if emtpy.</td>
+</tr>
+<tr>
+<td>favourite</td>
+<td><a href="#raceentrant">RaceEntrant</a></td>
+<td>The favourite entrant in the race.</td>
+</tr>
+<tr>
+<td>runners</td>
+<td>[]<a href="#racerunner">RaceRunner</a></td>
+<td>The runners in the race.</td>
+</tr>
+<tr>
+<td>derivatives</td>
+<td>[]<a href="#racerunner">RaceRunner</a></td>
+<td>The derivative runners in the race.</td>
+</tr>
+<tr>
+<td>mover</td>
+<td><a href="#raceentrant">RaceEntrant</a></td>
+<td>The market mover in the race.</td>
+</tr>
+</tbody></table>
+<h2 id='race'>Race</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"97df766c-cdde-4aeb-b72a-95776d2e59b0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"meeting_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"meeting_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4cdf2c76-229d-4cb8-a930-e3a2fe173b62"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Epiroc Mdn Plate"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"advertised_start"</span><span class="p">:</span><span class="w"> </span><span class="mi">1607915100</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"actual_start"</span><span class="p">:</span><span class="w"> </span><span class="mi">1607915100</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"advertised_start_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-14 03:05:00 +0000 UTC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"actual_start_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-14 03:05:00 +0000 UTC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"race_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NSW"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1400</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Overcast"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"form_guide"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZOUNATE (5) resumes from a spell. He's been an enigma with eight placings from eleven starts. He's been competitive at a much higher level. Two trials back have been solid and surely today is he day. DAWN FLIGHT (9) had his chance when fourth here on debut behind Grazie. She's sure to improve from the race experience and should be kept safe. HOT BAHAMA (2) is making his stable debut for James Ponsonby. Hard to get a gauge on his two runs in Queensland but he must be respected. Blinkers are on. TWICE ON SUNDAY (11) best of the rest."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"silk_base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"drr38safykj6s.cloudfront.net"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"track_condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good3"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>event_id</td>
+<td>string</td>
+<td>UUIDv4 of the race.</td>
+</tr>
+<tr>
+<td>meeting_name</td>
+<td>string</td>
+<td>The name of the meeting location.</td>
+</tr>
+<tr>
+<td>meeting_id</td>
+<td>string</td>
+<td>UUIDv4 of the meeting this race belongs to.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>The status of the race. One of: <code>Open</code>, <code>Closed</code>, <code>Abandoned</code>, <code>Live</code>, <code>Interim</code>, <code>Final</code>.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>The name of the race.</td>
+</tr>
+<tr>
+<td>advertised_start</td>
+<td>int</td>
+<td>The <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time</a> that the race is scheduled to start.</td>
+</tr>
+<tr>
+<td>actual_start</td>
+<td>int</td>
+<td>The <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time</a> that the race actually started. Note that this will be the same as the <code>advertised_start</code> until the race has started.</td>
+</tr>
+<tr>
+<td>advertised_start_string</td>
+<td>string</td>
+<td>A textual representation of the <code>advertised_start</code> in the <code>YYYY-MM-DD HH:MM:SS +hh:mm TZD</code> format.</td>
+</tr>
+<tr>
+<td>actual_start_string</td>
+<td>string</td>
+<td>A textual representation of the <code>actual_start</code> in the <code>YYYY-MM-DD HH:MM:SS +hh:mm TZD</code> format.</td>
+</tr>
+<tr>
+<td>race_number</td>
+<td>int</td>
+<td>The number of the race within the meeting. Note that <code>0</code> is used for special races within a meeting.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>One of <code>T</code> (Thoroughbred), <code>G</code> (Greyhound) or <code>H</code> (Harness).</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>The country this race is in, if available.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>The state within the country this race is in, if available.</td>
+</tr>
+<tr>
+<td>distance</td>
+<td>int</td>
+<td>The distance of the race in metres, if available.</td>
+</tr>
+<tr>
+<td>weather</td>
+<td>string</td>
+<td>The weather for this race, if available.</td>
+</tr>
+<tr>
+<td>form_guide</td>
+<td>string</td>
+<td>A description of the form guide for this race, if available.</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>string</td>
+<td>The racing comment, if available.</td>
+</tr>
+<tr>
+<td>silk_base_url</td>
+<td>string</td>
+<td>The base URL to use for generating silks, if available.</td>
+</tr>
+<tr>
+<td>track_condition</td>
+<td>string</td>
+<td>The track condition for this race, if available.</td>
+</tr>
+</tbody></table>
+<h2 id='raceresult'>RaceResult</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dawn Flight"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"barrier"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"margin_length"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.37</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>position</td>
+<td>int</td>
+<td>The position this entrant came in. Typically up to the first <code>4</code> positions are given, if available.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of the entrant in this position.</td>
+</tr>
+<tr>
+<td>barrier</td>
+<td>int</td>
+<td>The barrier the entrant ran from.</td>
+</tr>
+<tr>
+<td>runner_number</td>
+<td>int</td>
+<td>The number/saddle/box of the entrant in this position.</td>
+</tr>
+<tr>
+<td>margin_length</td>
+<td>float</td>
+<td>How many lengths behind first place this position came, if available.</td>
+</tr>
+</tbody></table>
+<h2 id='racedividend'>RaceDividend</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3c16a3c1-3b29-4962-aad5-942b41cfb812"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tote"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QLD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exacta"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dividend"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pool_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">1210.6</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"jackpot_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"positions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>UUIDv4 of the dividend.</td>
+</tr>
+<tr>
+<td>tote</td>
+<td>string</td>
+<td>Which tote this dividend belongs to (e.g. <code>VIC</code>, <code>NSW</code>, <code>QLD</code>, <code>UNKNOWN</code>).</td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>string</td>
+<td>Which product this dividend belongs to.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>The status of this dividend. One of <code>Interim</code> or <code>Final</code>.</td>
+</tr>
+<tr>
+<td>dividend</td>
+<td>float</td>
+<td>The value of this dividend.</td>
+</tr>
+<tr>
+<td>pool_size</td>
+<td>float</td>
+<td>The size of the pool, if available.</td>
+</tr>
+<tr>
+<td>jackpot_size</td>
+<td>float</td>
+<td>The size of the jackpot, if available.</td>
+</tr>
+<tr>
+<td>positions</td>
+<td>[]<a href="#raceposition">RacePosition</a></td>
+<td>The positions making up this dividend.</td>
+</tr>
+</tbody></table>
+<h2 id='raceposition'>RacePosition</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>runner_number</td>
+<td>int</td>
+<td>The number/saddle/box of the entrant in this position.</td>
+</tr>
+<tr>
+<td>position</td>
+<td>int</td>
+<td>The position that this entrant came.</td>
+</tr>
+</tbody></table>
+<h2 id='raceentrant'>RaceEntrant</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"market_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final Field"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"primary_market"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Halvoya"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"is_scratched"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scratch_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1607904547</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"barrier"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"prize_money"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2380"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"colour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"silk_colours"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Red, White And Black Diagonal Stripes, White Cap"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"form_comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"class_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"jockey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Price"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"trainer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"R </span><span class="se">\u</span><span class="s2">0026 M Griffiths </span><span class="se">\u</span><span class="s2">0026 De Kock"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"allocated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"favourite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mover"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>entrant_id</td>
+<td>string</td>
+<td>UUIDv4 of the entrant.</td>
+</tr>
+<tr>
+<td>market_name</td>
+<td>string</td>
+<td>The name of the market this entrant belongs to. This will usually be <code>Final Field</code> for the primary market of the race.</td>
+</tr>
+<tr>
+<td>primary_market</td>
+<td>boolean</td>
+<td>Whether this entrant is part of the primary market of the race.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of this entrant.</td>
+</tr>
+<tr>
+<td>is_scratched</td>
+<td>boolean</td>
+<td>Whether this entrant has been scratched.</td>
+</tr>
+<tr>
+<td>barrier</td>
+<td>int</td>
+<td>Which barrier/box this entrant runs from.</td>
+</tr>
+<tr>
+<td>runner_number</td>
+<td>int</td>
+<td>The runner/saddle/box number of this entrant.</td>
+</tr>
+<tr>
+<td>prize_money</td>
+<td>string</td>
+<td>The life time prize money this entrant has earned, if available.</td>
+</tr>
+<tr>
+<td>age</td>
+<td>int</td>
+<td>The age of this entrant, if available.</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>string</td>
+<td>The sex of this entrant, if available.</td>
+</tr>
+<tr>
+<td>colour</td>
+<td>string</td>
+<td>The colour of this entrant, if available.</td>
+</tr>
+<tr>
+<td>silk_colours</td>
+<td>string</td>
+<td>The colours of the silk this entrant is wearing, if available.</td>
+</tr>
+<tr>
+<td>form_comment</td>
+<td>string</td>
+<td>A comment describing this entrants form, if available.</td>
+</tr>
+<tr>
+<td>class_level</td>
+<td>string</td>
+<td>The class level of this entrant, if available.</td>
+</tr>
+<tr>
+<td>jockey</td>
+<td>string</td>
+<td>The jockey riding this entrant, if available.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>The country of origin of this entrant, if available.</td>
+</tr>
+<tr>
+<td>trainer_name</td>
+<td>string</td>
+<td>The trainer name of this entrant, if available.</td>
+</tr>
+<tr>
+<td>weight</td>
+<td><a href="#runnerweight">RunnerWeight</a></td>
+<td>The weight of this entrant, if available.</td>
+</tr>
+<tr>
+<td>favourite</td>
+<td>boolean</td>
+<td>Whether this entrant is the favourite.</td>
+</tr>
+<tr>
+<td>mover</td>
+<td>boolean</td>
+<td>Whether this entrant is the market mover.</td>
+</tr>
+</tbody></table>
+<h2 id='runnerweight'>RunnerWeight</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"allocated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>allocated</td>
+<td>string</td>
+<td>The allocated weight of this runner, if available.</td>
+</tr>
+<tr>
+<td>total</td>
+<td>string</td>
+<td>The total weight of this runner, if available.</td>
+</tr>
+</tbody></table>
+<h2 id='racerunner'>RaceRunner</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"market_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final Field"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"primary_market"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Halvoya"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"is_scratched"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scratch_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1607904547</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"barrier"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"runner_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"prize_money"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2380"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"colour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"silk_colours"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Red, White And Black Diagonal Stripes, White Cap"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"form_comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"class_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"jockey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Price"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"trainer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"R </span><span class="se">\u</span><span class="s2">0026 M Griffiths </span><span class="se">\u</span><span class="s2">0026 De Kock"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"allocated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"favourite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mover"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"flucs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mf">9.5</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"odds"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"fixed_win"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fixed_place"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.25</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"scr_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-14T00:09:07Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"competitor_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ride_guide_exists"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ride_guide_thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ride_guide_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"trainer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Note:</strong> A RaceRunner expands on the <a href="#raceentrant">RaceEntrant</a> fields, meaning that all fields in the <em>RaceEntrant</em> schema are part of the <em>RaceRunner</em> schema, along with the following fields.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>meta</td>
+<td>object</td>
+<td>A key-value (string-string) object of additional metadata relating to the runner, if available.</td>
+</tr>
+<tr>
+<td>flucs</td>
+<td>[]float</td>
+<td>An ordered array of Fixed Win price fluctuations this runner has had, if available.</td>
+</tr>
+<tr>
+<td>odds</td>
+<td><a href="#odds">Odds</a></td>
+<td>The current odds of this runner.</td>
+</tr>
+<tr>
+<td>scr_time</td>
+<td>string</td>
+<td>The date and time the runner was scratched. In <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.</td>
+</tr>
+<tr>
+<td>competitor_id</td>
+<td>string</td>
+<td>Unused.</td>
+</tr>
+<tr>
+<td>ride_guide_exists</td>
+<td>bool</td>
+<td>Whether a ride guide exists.</td>
+</tr>
+<tr>
+<td>ride_guide_thumbnail</td>
+<td>string</td>
+<td>The thumbnail URL for the ride guide, if available.</td>
+</tr>
+<tr>
+<td>ride_guide_file</td>
+<td>string</td>
+<td>The URL to the ride guide, if available.</td>
+</tr>
+<tr>
+<td>trainer</td>
+<td>string</td>
+<td>Unused. See <code>trainer_name</code>.</td>
+</tr>
+</tbody></table>
+<h2 id='odds'>Odds</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"fixed_win"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fixed_place"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.25</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fixed_win</td>
+<td>float</td>
+<td>The fixed win price.</td>
+</tr>
+<tr>
+<td>fixed_place</td>
+<td>float</td>
+<td>The fixed place price, if available.</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified item could not be found.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting data too fast! Make sure you have set your <a href="#identification">identification headers</a> and contact us.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="go">go</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
