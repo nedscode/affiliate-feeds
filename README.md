@@ -1,486 +1,82 @@
-# Documentation for Affiliate Feed services (public)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/slatedocs/img/main/logo-slate.png" alt="Slate: API Documentation Generator" width="226">
+  <br>
+  <a href="https://github.com/slatedocs/slate/actions?query=workflow%3ABuild+branch%3Amain"><img src="https://github.com/slatedocs/slate/workflows/Build/badge.svg?branch=main" alt="Build Status"></a>
+  <a href="https://hub.docker.com/r/slatedocs/slate"><img src="https://img.shields.io/docker/v/slatedocs/slate?sort=semver" alt="Docker Version" /></a>
+</p>
 
-### Quick Links
-[Racing API](README.md#racing-apis) -> 
-[Meetings List](README.md#racing-base_urlmeetings) | 
-[Meeting Details](README.md#racing-base_urlmeetingsmeeting-id) | 
-[Event Details](README.md#racing-base_urleventsevent-id) 
+<p align="center">Slate helps you create beautiful, intelligent, responsive API documentation.</p>
 
-[Sports API](README.md#sports-api) ->
-[Competitions List](README.md#sports-base_urlcompetitions) | 
-[Competitions Details](README.md#sports-base_urlcompetitionscompetition-id) | 
-[Events List](README.md#sports-base_urlevents) |
-[Event Details](README.md#sports-base_urleventsevent-id) 
+<p align="center"><img src="https://raw.githubusercontent.com/slatedocs/img/main/screenshot-slate.png" width=700 alt="Screenshot of Example Documentation created with Slate"></p>
 
-[Other TODO](README.md#other-todo-items) 
+<p align="center"><em>The example above was created with Slate. Check it out at <a href="https://slatedocs.github.io/slate">slatedocs.github.io/slate</a>.</em></p>
 
+Features
+------------
 
-### Status 30 AUG 2019
-- [x] Added results to racing events
-- [x] Empty / blank fields included in all data payloads
+* **Clean, intuitive design** — With Slate, the description of your API is on the left side of your documentation, and all the code examples are on the right side. Inspired by [Stripe's](https://stripe.com/docs/api) and [PayPal's](https://developer.paypal.com/webapps/developer/docs/api/) API docs. Slate is responsive, so it looks great on tablets, phones, and even in print.
 
-- [x] Overview of the structure of the new API
-- [x] Overview of working endpoints in new API
-- [x] Details of Racing API
+* **Everything on a single page** — Gone are the days when your users had to search through a million pages to find what they wanted. Slate puts the entire documentation on a single page. We haven't sacrificed linkability, though. As you scroll, your browser's hash will update to the nearest header, so linking to a particular point in the documentation is still natural and easy.
 
-TODO
-- [ ] Details of Sports API
-- [x] Details of Racing Resulting
-- [ ] Details of Sports Resulting
-- [ ] BetNow Functionality
+* **Slate is just Markdown** — When you write docs with Slate, you're just writing Markdown, which makes it simple to edit and understand. Everything is written in Markdown — even the code samples are just Markdown code blocks.
 
-## Scope
+* **Write code samples in multiple languages** — If your API has bindings in multiple programming languages, you can easily put in tabs to switch between them. In your document, you'll distinguish different languages by specifying the language name at the top of each code block, just like with GitHub Flavored Markdown.
 
-This documentation is provided for external developers who need to write code to poll data from the provided 
-sites.
+* **Out-of-the-box syntax highlighting** for [over 100 languages](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers), no configuration required.
 
-The API itself is designed to be consistent across all endpoints, and provide some built in tools to make
-connecting to the API, debugging and maintaining your code that little bit easier.
+* **Automatic, smoothly scrolling table of contents** on the far left of the page. As you scroll, it displays your current position in the document. It's fast, too. We're using Slate at TripIt to build documentation for our new API, where our table of contents has over 180 entries. We've made sure that the performance remains excellent, even for larger documents.
 
-# API Endpoints - Multiple Brands
+* **Let your users update your documentation for you** — By default, your Slate-generated documentation is hosted in a public GitHub repository. Not only does this mean you get free hosting for your docs with GitHub Pages, but it also makes it simple for other developers to make pull requests to your docs if they find typos or other problems. Of course, if you don't want to use GitHub, you're also welcome to host your docs elsewhere.
 
-All Brands follow the same endpoint syntax, and provide identical output formats.
+* **RTL Support** Full right-to-left layout for RTL languages such as Arabic, Persian (Farsi), Hebrew etc.
 
+Getting started with Slate is super easy! Simply press the green "use this template" button above and follow the instructions below. Or, if you'd like to check out what Slate is capable of, take a look at the [sample docs](https://slatedocs.github.io/slate/).
 
-The base URL for each brand is now as follows: 
+Getting Started with Slate
+------------------------------
 
-- Ladbrokes https://api.ladbrokes.com.au/affiliates/v1
-- Neds https://api.neds.com.au/affiliates/v1
-- BetStar https://api.betstar.com.au/affiliates/v1
-- BookMaker https://api.bookmaker.com.au/affiliates/v1
+To get started with Slate, please check out the [Getting Started](https://github.com/slatedocs/slate/wiki#getting-started)
+section in our [wiki](https://github.com/slatedocs/slate/wiki).
 
-*Deprecated API*
-The base URL for each brand was as follows: 
+We support running Slate in three different ways:
+* [Natively](https://github.com/slatedocs/slate/wiki/Using-Slate-Natively)
+* [Using Vagrant](https://github.com/slatedocs/slate/wiki/Using-Slate-in-Vagrant)
+* [Using Docker](https://github.com/slatedocs/slate/wiki/Using-Slate-in-Docker)
 
-- Ladbrokes https://api-affiliates.ladbrokes.com.au
-- Neds https://api-affiliates.neds.com.au
-- BetStar https://api-affiliates.betstar.com.au
-- BookMaker https://api-affiliates.bookmaker.com.au
+Companies Using Slate
+---------------------------------
 
-These API endpoints will continue to operate for a short time only, we will definitely be turning these off by Fri, 4th October 2019. 
-Please make sure you redirect all your incoming calls through the newly named endpoints before then.
+* [NASA](https://api.nasa.gov)
+* [Sony](http://developers.cimediacloud.com)
+* [Best Buy](https://bestbuyapis.github.io/api-documentation/)
+* [Travis-CI](https://docs.travis-ci.com/api/)
+* [Greenhouse](https://developers.greenhouse.io/harvest.html)
+* [WooCommerce](http://woocommerce.github.io/woocommerce-rest-api-docs/)
+* [Dwolla](https://docs.dwolla.com/)
+* [Clearbit](https://clearbit.com/docs)
+* [Coinbase](https://developers.coinbase.com/api)
+* [Parrot Drones](http://developer.parrot.com/docs/bebop/)
+* [Scale](https://docs.scaleapi.com/)
 
+You can view more in [the list on the wiki](https://github.com/slatedocs/slate/wiki/Slate-in-the-Wild).
 
-In the document below, we will refer to this as `BASE_URL`
+Questions? Need Help? Found a bug?
+--------------------
 
-The API provided on the `BASE_URL` uses `HTTPS` protocol - so can be hit from a browser, curl script, or coded using
-standard HTTP libs in your prefered development toolkit.
+If you've got questions about setup, deploying, special feature implementation in your fork, or just want to chat with the developer, please feel free to [start a thread in our Discussions tab](https://github.com/slatedocs/slate/discussions)!
 
-Each API endpoint has a consistent range of `GET` parameters for controlling the returned data.
+Found a bug with upstream Slate? Go ahead and [submit an issue](https://github.com/slatedocs/slate/issues). And, of course, feel free to submit pull requests with bug fixes or changes to the `dev` branch.
 
-# UUID format ID Fields
+Contributors
+--------------------
 
-Note that all ID fields across all APIs now use UUIDv4 notation instead of simple integers that
-may have been used previously.
+Slate was built by [Robert Lord](https://lord.io) while at [TripIt](https://www.tripit.com/). The project is now maintained by [Matthew Peveler](https://github.com/MasterOdin) and [Mike Ralphson](https://github.com/MikeRalphson).
 
-MeetingIDs / EventIDs are consistent across all brands, so they can be re-used across 
-different `BASE_URL`s to refer the exact same Meeting / Event / Entrant, from one brand to the next.
+Thanks to the following people who have submitted major pull requests:
 
-eg
+- [@chrissrogers](https://github.com/chrissrogers)
+- [@bootstraponline](https://github.com/bootstraponline)
+- [@realityking](https://github.com/realityking)
+- [@cvkef](https://github.com/cvkef)
 
-- https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
-- https://api-affiliates.neds.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
-- https://api-affiliates.betstar.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
-- https://api-affiliates.bookmaker.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
-
-Are 4 different views of the same event, with the pricing data applicable to that brand only.
-
-# Data vs Index API Endpoints
-
-There are 2 classes of API Endpoint provided.
-
-- Index API
-- Data API
-
-Index APIs provide HTML formatted index pages for basic queries.
-  
-These are provided for the developer as an aide for debugging and setting up your application code.
-
-For example, the `BASE_URL` returns a HTML formatted page with a human readable index of what URLs
-are available, and how to invoke them.
-
-eg. https://api-affiliates.ladbrokes.com.au gives us this Index, with an example URL in each case,
-and a listing of which parameters are accepted.
-![baseurl](screenshots/1.png)
-
-### Data API endpoints and Encoding types
-
-`JSON` Is the default encoding for the payload on Data APIs
-
-- https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4 
-
-returns a JSON payload with the data for the given racing event.
-
----
-
-`XML` Options - append `.xml` to the URL
-
-- https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.xml
-
-returns an XML payload for the exact same data.
-
----
-
-`HTML` Options to get a human readable index page of the exact same data, for easy debugging. 
-
-- https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.html
-
----
-
-Optional - using the `enc` GET parameter to control output encoding format
-
-- `?enc=html`  Returns `HTML` format 
-- `?enc=json`  Returns `JSON` format
-- `?enc=xml` Returns `XML` format.  (not available on all endpoints)
-- `?enc=help` Returns a short description of the available parameters. (Debugging aide)
-
-This is useful, as it can be applied to Index URLs where adding a `.html` is not applicable, such as 
-
-- `JSON` https://api-affiliates.ladbrokes.com.au/racing/meetings for a JSON data payload, vs
-- `XML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=xml for an XML data payload, vs
-- `HTML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=html for a human readable view of the same data
-- `PARAMETER HELP` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4?enc=help
-
----
-
-# Input Parameter Formats
-
-Parameters are parsed as presented.
-
-Special treatment of parameters includes :
-
-### `id` fields must be valid UUIDv4 IDs
-
-Conforms to UUID v4 (randomly generated)
-
-as per RFC 4122
-https://www.ietf.org/rfc/rfc4122.txt
-
-Useful tool for validating UUIDv4 can be found here
-https://www.uuidgenerator.net/version4
-
-### Date Fields
-
-Includes parameters labelled `date_from` and `date_to`.
- 
-Dates accept strings in the format `YYYY-MM-DD` as well as a selection of keywords :
-
-- `now`  for the current date and time.
-- `today`  for the start of the current day.
-- `week` for the start of the current week (where Monday is the first day of the week)
-- `month` for the start of the current month.
-- `all` In the context of `date_from` = all dates.  In the context of `date_to` = current date.
-
-Date ranges can be considered inclusive.
-
-So `date_from=today` includes events greater than or equal to 00:00:00 hrs of the current day.
-
-### Parameters with Choice sets
-
-If the parameter has a `Choices` set (as displayed in the HELP for that API endpoint), then 
-the input data must be a member of that set.
-
-ie :
-
-```
-Param: category        Default:    Choices: T,H,G, 
-```
-
-Then the `?category=VALUE`  must be one of T,H,G for the request to be accepted.
-
-
-# Racing APIs
-
-Summary of API endpoints for racing
-- `BASE_URL`/meetings
-- `BASE_URL`/meetings/`MEETING-ID`
-- `BASE_URL`/events/`EVENT-ID`
-
-### Racing `BASE_URL`/meetings
-
-- `JSON` https://api-affiliates.ladbrokes.com.au/racing/meetings
-- `HTML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=html
-- `XML` https://api-affiliates.ladbrokes.com.au/racing/meetings?enc=xml
-
-Parameters
-```cassandraql
-Param: enc             Default: json  Choices: json,xml,html
-Param: date_from       Default: week
-Param: date_to         Default: now
-Param: category        Default:    Choices: T,H,G, 
-Param: country         Default:    Choices:  ,AUS,ARG,CA,CHI,DEU,FR,HK,IND,IRE,JPN,KOR,NOR,NZ,PER,SAF,SGP,SWE,UK,URY,USA
-Param: limit           Default: 20
-```
-
-`Meetings List` Payload Format
-```go
-type meetingPayload struct {
-	Meetings []*meetingData `json:"meetings" xml:"meetings"`
-}
-
-type meetingData struct {
-	Meeting      string         `json:"meeting" xml:"meeting"`
-	Name         string         `json:"name" xml:"name"`
-	Date         time.Time      `json:"date" xml:"date"`
-	Category     string         `json:"category" xml:"category"`
-	CategoryName string         `json:"category_name" xml:"category_name"`
-	Country      string         `json:"country" xml:"country"`
-	State        string         `json:"state" xml:"state"`
-	Races        []*meetingRace `json:"races" xml:"races"`
-}
-
-type meetingRace struct {
-	ID             string    `json:"id" xml:"id"`
-	RaceNumber     uint32    `json:"race_number" xml:"race_number"`
-	Name           string    `json:"name" xml:"name"`
-	StartTime      time.Time `json:"start_time" xml:"start_time"`
-	TrackCondition string    `json:"track_condition" xml:"track_condition"`
-	Distance       uint32    `json:"distance" xml:"distance"`
-	Weather        string    `json:"weather" xml:"weather"`
-	Country        string    `json:"country" xml:"country"`
-	State          string    `json:"state" xml:"state"`
-}
-```
-
-### Racing `BASE_URL`/meetings/`MEETING-ID`
-
-- `JSON` https://api-affiliates.ladbrokes.com.au/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b
-- `XML` https://api-affiliates.ladbrokes.com.au/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b.xml
-- `HTML` https://api-affiliates.ladbrokes.com.au/racing/meetings/1f2d507d-e4b7-4d14-8463-17842301684b.html
-
-Parameters
-```cassandraql
-Param: enc             Default: json  Choices: json,xml,html
-```
-
-`Meeting Details` Payload Format
-```go
-// Still presented as an array as per the Meeting List payload
-// but there will be only 1 element in this array
-type meetingPayload struct {
-	Meetings []*meetingData `json:"meetings" xml:"meetings"`
-}
-
-type meetingData struct {
-	Meeting      string         `json:"meeting" xml:"meeting"`
-	Name         string         `json:"name" xml:"name"`
-	Date         time.Time      `json:"date" xml:"date"`
-	Category     string         `json:"category" xml:"category"`
-	CategoryName string         `json:"category_name" xml:"category_name"`
-	Country      string         `json:"country" xml:"country"`
-	State        string         `json:"state" xml:"state"`
-	Races        []*meetingRace `json:"races" xml:"races"`
-}
-
-type meetingRace struct {
-	ID             string    `json:"id" xml:"id"`
-	RaceNumber     uint32    `json:"race_number" xml:"race_number"`
-	Name           string    `json:"name" xml:"name"`
-	StartTime      time.Time `json:"start_time" xml:"start_time"`
-	TrackCondition string    `json:"track_condition" xml:"track_condition"`
-	Distance       uint32    `json:"distance" xml:"distance"`
-	Weather        string    `json:"weather" xml:"weather"`
-	Country        string    `json:"country" xml:"country"`
-	State          string    `json:"state" xml:"state"`
-}
-```
-
-### Racing `BASE_URL`/events/`EVENT-ID`
-
-- `JSON` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
-- `XML` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.xml
-- `HTML` https://api-affiliates.ladbrokes.com.au/racing/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.html
-
-Parameters
-```
-Param: enc             Default: json  Choices: json,xml,html
-```
-
-Note that Results are now added to the event details, as follows 
-
-Event Payload Format
-```go
-type eventRaceDetails struct {
-	Race      eventRace      `json:"race"`
-	Results   []*eventResult `json:"results,omitempty"`
-	Favourite eventEntrant   `json:"favourite"`
-	Runners   []*eventRunner `json:"runners"`
-	Mover     eventEntrant   `json:"mover"`
-	Error     string         `json:"error"`
-}
-
-type eventRace struct {
-	EventID               string `json:"event_id"`
-	MeetingName           string `json:"meeting_name"`
-	MeetingID             string `json:"meeting_id"`
-	Status                string `json:"status"`
-	Description           string `json:"description"`
-	AdvertisedStart       int64  `json:"advertised_start"`
-	ActualStart           int64  `json:"actual_start"`
-	AdvertisedStartString string `json:"advertised_start_string"`
-	ActualStartString     string `json:"actual_start_string"`
-	RaceNumber            uint32 `json:"race_number"`
-	Type                  string `json:"type"`
-	Country               string `json:"country"`
-	State                 string `json:"state"`
-	Distance              uint32 `json:"distance"`
-	Weather               string `json:"weather"`
-	FormGuide             string `json:"form_guide"`
-	Comment               string `json:"comment"`
-	SilkBaseURL           string `json:"silk_base_url"`
-	TrackCondition        string `json:"track_condition"`
-}
-
-type eventResult struct {
-	Position     uint32 `json:"position"`
-	Name         string `json:"name"`
-	Barrier      uint32 `json:"barrier"`
-	RunnerNumber uint32 `json:"runner_number"`
-}
-
-type eventEntrant struct {
-	EntrantID    string `json:"-"`
-	Name         string `json:"name"`
-	IsScratched  bool   `json:"is_scratched"`
-	ScratchTime  int64  `json:"scratch_time"`
-	Barrier      uint32 `json:"barrier"`
-	RunnerNumber int    `json:"runner_number"`
-	PrizeMoney   string `json:"prize_money"`
-	Age          int    `json:"age"`
-	Sex          string `json:"sex"`
-	Colour       string `json:"colour"`
-	SilkColours  string `json:"silk_colours"`
-	FormComment  string `json:"form_comment"`
-	ClassLevel   string `json:"class_level"`
-	Jockey       string `json:"jockey"`
-	Country      string `json:"country"`
-	TrainerName  string `json:"trainer_name"`
-	Weight       struct {
-		Allocated string `json:"allocated"`
-		Total     string `json:"total"`
-	} `json:"weight"`
-	Favourite bool `json:"favourite"`
-	Mover     bool `json:"mover"`
-}
-
-type formAdditionalData struct {
-	RunnerNumber int    `json:"runnerNumber"`
-	RunnerName   string `json:"runnerName"`
-	PrizeMoney   string `json:"prizeMoney"`
-	Last20Starts string `json:"last20Starts"`
-	Sire         struct {
-		Name string `json:"name"`
-		Text string `json:"Text"`
-	} `json:"sire"`
-	Dam struct {
-		Name string `json:"name"`
-		Text string `json:"Text"`
-	} `json:"dam"`
-	SireOfDam struct {
-		Name    string `json:"name"`
-		Country string `json:"country"`
-		Text    string `json:"Text"`
-	} `json:"sire_of_dam"`
-	Age         int    `json:"age"`
-	Sex         string `json:"sex"`
-	Colour      string `json:"colour"`
-	SilkColours string `json:"silk_colours"`
-	FormComment string `json:"formComment"`
-	ClassLevel  string `json:"classLevel"`
-	Jockey      struct {
-		AllowanceWeight     string `json:"AllowanceWeight"`
-		ApprenticeIndicator string `json:"ApprenticeIndicator"`
-		Name                string `json:"Name"`
-	} `json:"jockey"`
-	TrainerName string `json:"TrainerName"`
-	Country     string `json:"country"`
-	Weight      struct {
-		Allocated string `json:"allocated"`
-		Total     string `json:"total"`
-	} `json:"weight"`
-}
-
-type eventRunner struct {
-	eventEntrant
-	Meta               map[string]string `json:"meta" xml:"-"`
-	Flucs              []float64         `json:"flucs" xml:"-"`
-	Odds               odds              `json:"odds"`
-	ScrTime            *time.Time        `json:"scr_time"`
-	CompetitorID       string            `json:"competitor_id"`
-	RideGuideExists    bool              `json:"ride_guide_exists"`
-	RideGuideThumbnail string            `json:"ride_guide_thumbnail"`
-	RideGuideFile      string            `json:"ride_guide_file"`
-	Trainer            string            `json:"trainer"`
-}
-
-type odds struct {
-	FixedWin   float64 `json:"fixed_win"`
-	FixedPlace float64 `json:"fixed_place"`
-}
-```
-# Sports API
-
-Work In Progress.
- 
-Parameters and Result Payloads to be advised.
-
-The following denotes the proposed API to be delivered. This is mostly a mirror of the Racing API, with 
-the additional split by competitions, and slightly different search parameters.
-
-The Links below are examples only, and will not work till the new Sport API is rolled out.
-
-Summary of API endpoints for sports
-- `BASE_URL`/competitions
-- `BASE_URL`/competitions/`COMPETITON-ID`
-- `BASE_URL`/events
-- `BASE_URL`/events/`EVENT-ID`
-
-### Sports `BASE_URL`/competitions
-
-- `JSON` https://api-affiliates.ladbrokes.com.au/sports/competitions
-- `XML` https://api-affiliates.ladbrokes.com.au/sports/competitions?enc=xml
-- `HTML` https://api-affiliates.ladbrokes.com.au/sports/competitions?enc=html
-
-Parameters
-```cassandraql
-Param: enc             Default: json  Choices: json,xml,html
-Param: date_from       Default: week
-Param: date_to         Default: now
-Param: limit           Default: 20
-```
-
-
-### Sports `BASE_URL`/competitions/`COMPETITION-ID`
-
-- `JSON` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b
-- `XML` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b.xml
-- `HTML` https://api-affiliates.ladbrokes.com.au/sports/competitions/1f2d507d-e4b7-4d14-8463-17842301684b.html
-
-```cassandraql
-Param: enc             Default: json  Choices: json,xml,html
-```
-
-### Sports `BASE_URL`/events
-
-- `JSON` https://api-affiliates.ladbrokes.com.au/sports/events
-- `HTML` https://api-affiliates.ladbrokes.com.au/sports/events?enc=xml
-- `XML` https://api-affiliates.ladbrokes.com.au/sports/events?enc=html
-
-### Sports `BASE_URL`/events/`EVENT-ID`
-
-- `JSON` https://api-affiliates.ladbrokes.com.au/sports/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4
-- `XML` https://api-affiliates.ladbrokes.com.au/sports/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.xml
-- `HTML` https://api-affiliates.ladbrokes.com.au/sports/events/d43cc25b-2b27-4d5d-818e-b2f8b40399e4.html
-
-# Other TODO Items 
-
-Other items that are under review, include :
-
-- Resulting updates
-- BetNow functionality
-
-For other requests, please use the github issues to raise an issue, or email requests direct to 
-
-steven.oconnor@neds.com
-
-Thank You
+Also, thanks to [Sauce Labs](http://saucelabs.com) for sponsoring the development of the responsive styles.
