@@ -220,7 +220,8 @@ See [Race Request Parameters](#race-request-parameters).
   "form_guide": "",
   "comment": "ZOUNATE (5) resumes from a spell. He's been an enigma with eight placings from eleven starts. He's been competitive at a much higher level. Two trials back have been solid and surely today is he day. DAWN FLIGHT (9) had his chance when fourth here on debut behind Grazie. She's sure to improve from the race experience and should be kept safe. HOT BAHAMA (2) is making his stable debut for James Ponsonby. Hard to get a gauge on his two runs in Queensland but he must be respected. Blinkers are on. TWICE ON SUNDAY (11) best of the rest.",
   "silk_base_url": "drr38safykj6s.cloudfront.net",
-  "track_condition": "Good3"
+  "track_condition": "Good3",
+  "silk_url": "drr38safykj6s.cloudfront.net/182561_1_SPRITE_64x64.png"
 }
 ```
 
@@ -245,6 +246,7 @@ See [Race Request Parameters](#race-request-parameters).
 | comment                 | string | The racing comment, if available.                            |
 | silk_base_url           | string | The base URL to use for generating silks, if available.      |
 | track_condition         | string | The track condition for this race, if available.             |
+| silk_url                | string | The image URL containing 64x64 silks ordered by the runner number, if available. |
 
 ## RaceResult
 
