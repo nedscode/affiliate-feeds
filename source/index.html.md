@@ -617,7 +617,7 @@ type Race struct {
 	Comment               string `json:"comment"`
 	SilkBaseURL           string `json:"silk_base_url"`
 	TrackCondition        string `json:"track_condition"`
-  SilkURL               string `json:"silk_url"`
+	SilkURL               string `json:"silk_url"`
 }
 
 type Result struct {
