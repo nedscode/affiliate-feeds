@@ -1049,6 +1049,7 @@ Remember — Please include your identification headers!
     <span class="n">Comment</span>               <span class="kt">string</span> <span class="s">`json:"comment"`</span>
     <span class="n">SilkBaseURL</span>           <span class="kt">string</span> <span class="s">`json:"silk_base_url"`</span>
     <span class="n">TrackCondition</span>        <span class="kt">string</span> <span class="s">`json:"track_condition"`</span>
+    <span class="n">SilkURL</span>               <span class="kt">string</span> <span class="s">`json:"silk_url"`</span>
 <span class="p">}</span>
 
 <span class="k">type</span> <span class="n">Result</span> <span class="k">struct</span> <span class="p">{</span>
@@ -1837,7 +1838,8 @@ The sports API is not available via the affiliates API.
   </span><span class="nl">"form_guide"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZOUNATE (5) resumes from a spell. He's been an enigma with eight placings from eleven starts. He's been competitive at a much higher level. Two trials back have been solid and surely today is he day. DAWN FLIGHT (9) had his chance when fourth here on debut behind Grazie. She's sure to improve from the race experience and should be kept safe. HOT BAHAMA (2) is making his stable debut for James Ponsonby. Hard to get a gauge on his two runs in Queensland but he must be respected. Blinkers are on. TWICE ON SUNDAY (11) best of the rest."</span><span class="p">,</span><span class="w">
   </span><span class="nl">"silk_base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"drr38safykj6s.cloudfront.net"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"track_condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good3"</span><span class="w">
+  </span><span class="nl">"track_condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"silk_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"drr38safykj6s.cloudfront.net/182561_1_SPRITE_64x64.png"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <table><thead>
@@ -1941,6 +1943,11 @@ The sports API is not available via the affiliates API.
 <td>track_condition</td>
 <td>string</td>
 <td>The track condition for this race, if available.</td>
+</tr>
+<tr>
+<td>silk_url</td>
+<td>string</td>
+<td>The image URL containing 64x64 silks ordered by the runner number, if available.</td>
 </tr>
 </tbody></table>
 <h2 id='raceresult'>RaceResult</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
