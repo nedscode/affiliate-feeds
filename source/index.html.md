@@ -169,7 +169,7 @@ Available endpoints:
 
 * [`BASE_URL`/meetings](#racing-meetings)
 * [`BASE_URL`/meetings/`MEETING_ID`](#get-a-specific-meeting)
-* [`BASE_URL`/meetings-events/all](#get-all-meetings-and-events)
+* [`BASE_URL`/meetings-events/all](#get-all-meetings-and-races)
 * [`BASE_URL`/events/`EVENT_ID`](#get-a-specific-race)
 
 ## Racing Meetings
@@ -1755,7 +1755,7 @@ func main() {
 }
 ```
 
-This endpoint is a combination of our endpoints `/meetings` and `events/{id}`, where it retrieves all meetings and their respective races. If a race cannot be found, it's `id` and `error` are still present. The response payload, by default, is large, as it returns everything 'today'. However, query parameters can be used to customise the response. 
+This endpoint is a combination of our endpoints `/meetings` and `events/{id}`, where it retrieves all meetings and their respective races. If a race cannot be found, it's `id` and `error` are still present. The response payload, by default, is large, as it returns everything 'today'. However, query parameters can be used to customise the response. These parameters filter the **meetings** returned, and **do not** affect the races. 
 
 ### HTTP Request
 
@@ -1768,10 +1768,10 @@ Parameter | Default | Choices | Description
 `enc` | `json` | `json`,`xml`,`html`,`help` | The response encoding format. 
 `date_from` | `now` | | See [date formats](#date-fields). 
 `date_to` | `now` | | See [date formats](#date-fields). 
-`category` |  | `T`,`H`,`G` | Allows limiting the response to one of Thoroughbred, Harness or Greyhound meetings. 
-`country` |  | `AUS`,`ARG`,`CA`,`CHI`,`DEU`,`FR`,... | Allows limiting the response to only the requested country. See the `help` encoding for a full list. 
-`limit` | `200` |  | Limit the number of items included in the response. Max of 200. 
-`offset` | `0` |  | Skip the first `offset` responses. 
+`category` |  | `T`,`H`,`G` | Allows limiting the available **meetings** to one of Thoroughbred, Harness or Greyhound. 
+`country` |  | `AUS`,`ARG`,`CA`,`CHI`,`DEU`,`FR`,... | Allows limiting the available **meetings** to only the requested country. See the `help` encoding for a full list. 
+`limit` | `200` |  | Limit the number of **meetings** fetched. Max of 200. This limit will not reflect the size of the array as meetings have various amounts of races.
+`offset` | `0` |  | Skip the first `offset` responses for **meetings**. 
 
 ### Response Schema
 

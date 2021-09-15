@@ -152,10 +152,10 @@ Parameter | Default | Choices | Description
 `enc` | `json` | `json`,`xml`,`html`,`help` | The response encoding format. 
 `date_from` | `now` | | See [date formats](#date-fields). 
 `date_to` | `now` | | See [date formats](#date-fields). 
-`category` |  | `T`,`H`,`G` | Allows limiting the response to one of Thoroughbred, Harness or Greyhound meetings. 
-`country` |  | `AUS`,`ARG`,`CA`,`CHI`,`DEU`,`FR`,... | Allows limiting the response to only the requested country. See the `help` encoding for a full list. 
-`limit` | `200` |  | Limit the number of items included in the response. Max of 200. 
-`offset` | `0` |  | Skip the first `offset` responses. 
+`category` |  | `T`,`H`,`G` | Allows limiting the available **meetings** to one of Thoroughbred, Harness or Greyhound. 
+`country` |  | `AUS`,`ARG`,`CA`,`CHI`,`DEU`,`FR`,... | Allows limiting the available **meetings** to only the requested country. See the `help` encoding for a full list. 
+`limit` | `200` |  | Limit the number of **meetings** fetched. Max of 200. This limit will not reflect the size of the array as meetings have various amounts of races.
+`offset` | `0` |  | Skip the first `offset` responses for **meetings**. 
 
 ## AllMeetingsAndRacesResponse
 
