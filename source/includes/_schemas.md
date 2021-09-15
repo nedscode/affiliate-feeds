@@ -133,6 +133,92 @@ See [Meeting Request Parameters](#meeting-request-parameters).
 | country         | string   | The country that the meeting occurs in, if available.        |
 | state           | string   | The state that the meeting occurs in within the country, if available. |
 
+## AllMeetingsAndRacesParams
+
+```json
+{
+  "enc": "json",
+  "limit": 200,
+  "offset": 0,
+  "country": " ",
+  "type": " ",
+  "date_from": "2021-09-14T17:01:26.917532+10:00",
+  "date_to": "2021-09-14T17:01:26.917534+10:00"
+}
+```
+
+Parameter | Default | Choices | Description
+--------- | ------- | -----------|--------- 
+`enc` | `json` | `json`,`xml`,`html`,`help` | The response encoding format. 
+`date_from` | `now` | | See [date formats](#date-fields). 
+`date_to` | `now` | | See [date formats](#date-fields). 
+`category` |  | `T`,`H`,`G` | Allows limiting the response to one of Thoroughbred, Harness or Greyhound meetings. 
+`country` |  | `AUS`,`ARG`,`CA`,`CHI`,`DEU`,`FR`,... | Allows limiting the response to only the requested country. See the `help` encoding for a full list. 
+`limit` | `200` |  | Limit the number of items included in the response. Max of 200. 
+`offset` | `0` |  | Skip the first `offset` responses. 
+
+## AllMeetingsAndRacesResponse
+
+```json
+{
+  "header": {...},
+  "params": {...},
+  "data": {
+    "meetings_races": [...]
+  }
+}
+```
+
+| Name   | Type                                      | Description                          |
+| ------ | ----------------------------------------- | ------------------------------------ |
+| header | [ResponseHeader](#responseheader)         | Meta data describing the response.   |
+| params | [AllMeetingsAndRacesParams](#allmeetingsandracesparams) | The parameters sent in this request. |
+| data   | [AllMeetingsAndRaces](#allmeetingsandraces)                   | All meetings and their race data.                      |
+
+## AllMeetingsAndRaces
+
+```json
+{
+  "meetings_races": [
+    {...},
+    {...},
+  ],
+}
+```
+
+| Name   | Type                                      | Description                          |
+| ------ | ----------------------------------------- | ------------------------------------ |
+| meetings_races |  \[\][MeetingAndAllRaceDetails](#meetingandallracedetails)        | An array of meetings and their respective race data.   |
+
+## MeetingAndAllRaceDetails
+
+```json
+{
+  "meeting": "",
+  "name": "",
+  "date": "YYYY-MM-DDT00:00:00Z",
+  "category": "",
+  "category_name": "",
+  "country": "",
+  "state": "",
+  "races": [
+    {...},
+    {...}
+  ]
+}
+```
+
+| Name          | Type                            | Description                                                  |
+| ------------- | ------------------------------- | ------------------------------------------------------------ |
+| meeting       | string                          | UUIDv4 id of the meeting.                                    |
+| name          | string                          | The name of the meeting location.                            |
+| date          | date                            | The date that the meeting occurs on.                         |
+| category      | string                          | One of `T`, `G`, or `H`.                                     |
+| category_name | string                          | One of `Thoroughbred Horse Racing`, `Greyhound Racing` or `Harness Horse Racing`. |
+| country       | string                          | The country that the meeting occurs in, if available.        |
+| State         | string                          | The state that the meeting occurs in within the country, if available. |
+| Races         | \[\][RacesData](#racesdata) | Array of race data.                                              |
+
 ## RacesResponse
 
 ```json
