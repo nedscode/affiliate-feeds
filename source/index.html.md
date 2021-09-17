@@ -1755,7 +1755,7 @@ func main() {
 }
 ```
 
-This endpoint is a combination of our endpoints `/meetings` and `events/{id}`, where it retrieves all meetings and their respective races. If a race cannot be found, it's `id` and `error` are still present. The response payload, by default, is large, as it returns everything 'today'. However, query parameters can be used to customise the response. These parameters filter the **meetings** returned, and **do not** affect the races. 
+This endpoint is a combination of our endpoints `/meetings` and `events/{id}`, where it retrieves all meetings and their respective races. If a race cannot be found, it's `id` and `error` are still present. The response payload, by default, is large, as it returns everything 'today'. However, query parameters can be used to customise the response. These parameters filter the **meetings** returned, and **do not** affect the races. Due to the size of the response, we limit the date range to no more than 36 hours.
 
 ### HTTP Request
 
@@ -1767,7 +1767,7 @@ Parameter | Default | Choices | Description
 --------- | ------- | -----------|--------- 
 `enc` | `json` | `json`,`xml`,`html`,`help` | The response encoding format. 
 `date_from` | `now` | | See [date formats](#date-fields). 
-`date_to` | `now` | | See [date formats](#date-fields). 
+`date_to` | `now` | | See [date formats](#date-fields). Cannot be more than 36 hrs from `date_from`.
 `category` |  | `T`,`H`,`G` | Allows limiting the available **meetings** to one of Thoroughbred, Harness or Greyhound. 
 `country` |  | `AUS`,`ARG`,`CA`,`CHI`,`DEU`,`FR`,... | Allows limiting the available **meetings** to only the requested country. See the `help` encoding for a full list. 
 `limit` | `200` |  | Limit the number of **meetings** fetched. Max of 200. This limit will not reflect the size of the array as meetings have various amounts of races.

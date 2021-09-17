@@ -151,7 +151,7 @@ Parameter | Default | Choices | Description
 --------- | ------- | -----------|--------- 
 `enc` | `json` | `json`,`xml`,`html`,`help` | The response encoding format. 
 `date_from` | `now` | | See [date formats](#date-fields). 
-`date_to` | `now` | | See [date formats](#date-fields). 
+`date_to` | `now` | | See [date formats](#date-fields).  Cannot be more than 36 hrs from `date_from`.
 `category` |  | `T`,`H`,`G` | Allows limiting the available **meetings** to one of Thoroughbred, Harness or Greyhound. 
 `country` |  | `AUS`,`ARG`,`CA`,`CHI`,`DEU`,`FR`,... | Allows limiting the available **meetings** to only the requested country. See the `help` encoding for a full list. 
 `limit` | `200` |  | Limit the number of **meetings** fetched. Max of 200. This limit will not reflect the size of the array as meetings have various amounts of races.
