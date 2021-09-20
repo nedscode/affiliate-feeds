@@ -22,7 +22,7 @@ code_clipboard: true
 
 Welcome to the Ladbrokes Affiliate API!
 
-The base URL is `https://api.ladbrokes.com.au/affiliates/v1`and further documentation may refer to this as `BASE_URL`.
+The base URL is `https://api-affiliates.ladbrokes.com.au/affiliates/v1/`and further documentation may refer to this as `BASE_URL`.
 
 Dates & times are returned in UTC using [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) unless otherwise specified.
 
