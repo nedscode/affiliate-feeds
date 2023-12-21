@@ -10,6 +10,7 @@ toc_footers:
   - <a href='https://www.ladbrokes.com.au/contact-us'>Contact Us</a>
 
 includes:
+  - deeplinks
   - schemas
   - errors
 
