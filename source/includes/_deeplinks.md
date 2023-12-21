@@ -2,6 +2,7 @@
 
 ## Racing Bets
 `Available for: iOS and Android Mobile Application`
+
 `Available from: Version 8.69.0`
 
 Currently we support adding bets within our platform from external sources via deep linking. URL format must follow the appropriate syntax to be recognised:
@@ -43,13 +44,13 @@ There are a variety of conditions that can invalidate a route, which we handle d
 
 Error Case | Description | Result
 --------- | ----------- | ---------
-`Existing Errored Bets` | User contains errored bets in Betslip | User routed to `Home`, no bet added, user notified via toast.
-`Existing Processing Bets` | User contains processing bets in Betslip | User routed to `Home`, no bet added, user notified via toast.
-`Network Error` | Unable to fetch data required | User routed to `Home`, no bet added, user notified via toast.
-`Race Not Found` | Race doesn't exist on platform | User routed to `Home`, no bet added, user notified via toast.
-`Meeting Not Found` | Meeting doesn't exist on platform | User routed to `Home`, no bet added, user notified via toast.
-`Price Unavailable` | Price is no longer available on race | User routed to `Race`, no bet added, user notified via toast.
-`Market Unavailable` | Market is no longer available on race | User routed to `Race`, no bet added, user notified via toast.
-`Race Unavailable` | Race is no longer available | User routed to `Race`, no bet added, user notified via toast.
-`Entrant Unavailable` | Entrant is no longer available on race | User routed to `Race`, no bet added, user notified via toast.
-`Market Controlled` | Market is controlled due to Punter Assist condition | User routed to `Race`, no bet added, user notified via toast, Market Control condition displayed.
+`Existing Errored Bets` | User contains errored bets in Betslip. | User routed to `Home`, no bet added, user notified via toast.
+`Existing Processing Bets` | User contains processing bets in Betslip. | User routed to `Home`, no bet added, user notified via toast.
+`Network Error` | Unable to fetch data required. | User routed to `Home`, no bet added, user notified via toast.
+`Race Not Found` | Race doesn't exist on platform. | User routed to `Home`, no bet added, user notified via toast.
+`Meeting Not Found` | Meeting doesn't exist on platform. | User routed to `Home`, no bet added, user notified via toast.
+`Price Unavailable` | Price is no longer available on race. | User routed to `Race`, no bet added, user notified via toast.
+`Market Unavailable` | Market is no longer available on race. | User routed to `Race`, no bet added, user notified via toast.
+`Race Unavailable` | Race is no longer available. | User routed to `Race`, no bet added, user notified via toast.
+`Entrant Unavailable` | Entrant is no longer available on race. | User routed to `Race`, no bet added, user notified via toast.
+`Market Controlled` | Market is controlled due to Punter Assist condition. | User routed to `Race`, no bet added, user notified via toast, Market Control condition displayed.
