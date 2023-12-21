@@ -363,6 +363,14 @@
             <a href="#sports-api" class="toc-h1 toc-link" data-title="Sports API">Sports API</a>
           </li>
           <li>
+            <a href="#deep-links" class="toc-h1 toc-link" data-title="Deep Links">Deep Links</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#racing-bets" class="toc-h2 toc-link" data-title="Racing Bets">Racing Bets</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1432,6 +1440,173 @@ Remember — Please include your identification headers!
 <aside class="warning">
 The sports API is not available via the affiliates API.
 </aside>
+<h1 id='deep-links'>Deep Links</h1><h2 id='racing-bets'>Racing Bets</h2>
+<p><code>Available for: iOS and Android Mobile Application</code>
+<code>Available from: Version 8.69.0</code></p>
+
+<p>Currently we support adding bets within our platform from external sources via deep linking. URL format must follow the appropriate syntax to be recognised:</p>
+
+<p><code>/racing/&lt;meetingName&gt;/&lt;raceId&gt;/&lt;entrantId&gt;/&lt;dividendCode&gt;</code></p>
+
+<p>Where:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>meetingName</code></td>
+<td><code>string</code></td>
+<td>The name of the meeting (<code>name</code>). See <a href="#meeting">Meeting</a>.</td>
+<td><code>Geelong</code></td>
+</tr>
+<tr>
+<td><code>raceId</code></td>
+<td><code>string</code></td>
+<td>UUIDv4 representing the race (<code>event_id</code>). See <a href="#race">Race</a>.</td>
+<td><code>d3c7c5f8-5e4a-40e6-a1e7-69d6d9fd722d</code></td>
+</tr>
+<tr>
+<td><code>entrantId</code></td>
+<td><code>string</code></td>
+<td>UUIDv4 representing the entrant (<code>entrant_id</code>). See <a href="#raceentrant">Entrant</a>.</td>
+<td><code>12dbd4e3-0f0d-45f8-b1b2-1b2bf8747554</code></td>
+</tr>
+<tr>
+<td><code>dividendCode</code></td>
+<td><code>string</code></td>
+<td>Code representing the price. Derived from below list.</td>
+<td><code>fw</code></td>
+</tr>
+</tbody></table>
+
+<p>List of available <code>dividendCodes</code>:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Associated Product</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>bob</code></td>
+<td>Best of the Best</td>
+</tr>
+<tr>
+<td><code>btsp</code></td>
+<td>Best Tote or Starting Price</td>
+</tr>
+<tr>
+<td><code>btp</code></td>
+<td>Best Tote Place</td>
+</tr>
+<tr>
+<td><code>fp</code></td>
+<td>Fixed Place</td>
+</tr>
+<tr>
+<td><code>fw</code></td>
+<td>Fixed Win</td>
+</tr>
+<tr>
+<td><code>mtsp</code></td>
+<td>Mid Tote or Starting Price</td>
+</tr>
+<tr>
+<td><code>mtp</code></td>
+<td>Mid Tote Place</td>
+</tr>
+<tr>
+<td><code>mtw</code></td>
+<td>Mid Tote Win</td>
+</tr>
+<tr>
+<td><code>spg</code></td>
+<td>Starting Price Guarantee</td>
+</tr>
+<tr>
+<td><code>tf</code></td>
+<td>Top Fluc</td>
+</tr>
+<tr>
+<td><code>tp</code></td>
+<td>Tote Place</td>
+</tr>
+<tr>
+<td><code>tw</code></td>
+<td>Tote Win</td>
+</tr>
+</tbody></table>
+
+<p>When constructed correctly, the URL used to access our platform should match a format similar to:</p>
+
+<p><code>https://www.ladbrokes.com.au/racing/bunbury/d3c7c5f8-5e4a-40e6-a1e7-69d6d9fd722d/12dbd4e3-0f0d-45f8-b1b2-1b2bf8747554/fw</code></p>
+
+<p>Routes will land a user within Betslip, with their bet added, and also route them to the associated racecard for the provided <code>raceId</code> following happy path.
+There are a variety of conditions that can invalidate a route, which we handle differently depending on condition:</p>
+
+<table><thead>
+<tr>
+<th>Error Case</th>
+<th>Description</th>
+<th>Result</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Existing Errored Bets</code></td>
+<td>User contains errored bets in Betslip</td>
+<td>User routed to <code>Home</code>, no bet added, user notified via toast.</td>
+</tr>
+<tr>
+<td><code>Existing Processing Bets</code></td>
+<td>User contains processing bets in Betslip</td>
+<td>User routed to <code>Home</code>, no bet added, user notified via toast.</td>
+</tr>
+<tr>
+<td><code>Network Error</code></td>
+<td>Unable to fetch data required</td>
+<td>User routed to <code>Home</code>, no bet added, user notified via toast.</td>
+</tr>
+<tr>
+<td><code>Race Not Found</code></td>
+<td>Race doesn&#39;t exist on platform</td>
+<td>User routed to <code>Home</code>, no bet added, user notified via toast.</td>
+</tr>
+<tr>
+<td><code>Meeting Not Found</code></td>
+<td>Meeting doesn&#39;t exist on platform</td>
+<td>User routed to <code>Home</code>, no bet added, user notified via toast.</td>
+</tr>
+<tr>
+<td><code>Price Unavailable</code></td>
+<td>Price is no longer available on race</td>
+<td>User routed to <code>Race</code>, no bet added, user notified via toast.</td>
+</tr>
+<tr>
+<td><code>Market Unavailable</code></td>
+<td>Market is no longer available on race</td>
+<td>User routed to <code>Race</code>, no bet added, user notified via toast.</td>
+</tr>
+<tr>
+<td><code>Race Unavailable</code></td>
+<td>Race is no longer available</td>
+<td>User routed to <code>Race</code>, no bet added, user notified via toast.</td>
+</tr>
+<tr>
+<td><code>Entrant Unavailable</code></td>
+<td>Entrant is no longer available on race</td>
+<td>User routed to <code>Race</code>, no bet added, user notified via toast.</td>
+</tr>
+<tr>
+<td><code>Market Controlled</code></td>
+<td>Market is controlled due to Punter Assist condition</td>
+<td>User routed to <code>Race</code>, no bet added, user notified via toast, Market Control condition displayed.</td>
+</tr>
+</tbody></table>
 <h1 id='schemas'>Schemas</h1><h2 id='responseheader'>ResponseHeader</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"generated_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
